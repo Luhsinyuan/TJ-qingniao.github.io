@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="google-site-verification" content="TZE0rZyIqLl10trYu3BWBWa1Vmz6HFwhb2OcNEK4u-s" />
+     <link rel="shortcut icon" href= /img/favicon.ico >
+    <title>
+        Be Better
+    </title>
+    <meta name="description" content= My personal blog. >
+    <meta name="keywords" content= Blog,Hexo >
+    
+<link rel="stylesheet" href="/libs/highlight/styles/monokai-sublime.css">
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body id="bodyx">
+    <div class="hd posts">
+    <a href="/index.html"><i class="fa fa-home
+ replay-btn" aria-hidden="true"></i></a>
+    <div class="post-title">
+        <p>
+            Algorithem BLOG
+        </p>
+        <hr>
+    </div>
+    <div class="post-content">
+        <h2 id="写在前边"><a href="#写在前边" class="headerlink" title="写在前边"></a>写在前边</h2><ul>
+<li>可以算是第一次写博客，用以记录剩下的两年半大学时光和祭奠荒废了的大一，并且以此为勉，更加努力！          <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>首先看题目描述：<pre><code>给定一个区间的集合，找到需要移除区间的最小数量，使剩余区间互不重叠。
+</code></pre>
+</li>
+</ul>
+<p>注意:<br>                可以认为区间的终点总是大于它的起点。<br>                区间 [1,2] 和 [2,3] 的边界相互“接触”，但没有相互重叠。</p>
+<p>示例 1:</p>
+<pre><code>输入: [ [1,2], [2,3], [3,4], [1,3] ]
+</code></pre>
+<p>输出: 1</p>
+<p> -解释: 移除 [1,3] 后，剩下的区间没有重叠。</p>
+<ul>
+<li><p>因为是刚开始刷题，所以对于这种题目不是很熟悉，自身也没有参加算法比赛的经历。所以看到这道题十分的懵。尝试无果之后去看了题解。</p>
+</li>
+<li><pre><code>题解中大多数人提到了贪心算法，而贪心算法对我而言仅仅是了解，只是在数据结构课上提起prim和kruskal算法的时候提到过，具体怎么实现我却不是很清楚。于是我去查找了贪心算法的介绍，例题等，因为时间关系我理解的还不是很透彻，下面是我对贪心算法的一些简单理解。
+   
+   *所谓贪心，是一个不怎么好的词，而这个算法也可以这么理解。不需要有大局观和整体意识，只需要在每一步做到最好，得到最优解，那么在最后也会得到最优解。*
+</code></pre>
+</li>
+<li><p>就是带着这样的理解，我看了几道例题。令我比较惊讶的是，我看到的两道例题无一例外是用最小堆完成的，刚好是我的数据结构程序设计题。。。。令我有些迷惑。因此最后我还是去看了上边这道题的题解。</p>
+<p>​         </p>
+</li>
+<li><p>代码十分简单甚至优美，感兴趣的可以去亲自看一看，就在这道题的评论区。一方面我对算法更加的敬畏，另一方面也十分愧疚自己实力不够。</p>
+</li>
+</ul>
+<ul>
+<li><p>对于这道题，含有K个区间，要求去掉的区间最少，换言之就是留下的最多。而留下的区间又是全部不重叠的。对于第一个区间来说，只有该区间右段足够小，才能给后边空出足够的位置放下更多的数组。当然这是在不重叠的情况下。因此考虑先将所有区间按照右端点的大小排序，其中最小的作为第一个区间，不妨令该区间的右端为i,考虑到不重叠，下一个区间的左端一定大于等于i,检索到这样一个区间之后，将其作为下一个区间（记得，此时我们将所有区间按照右端排过序了，因此检索到第一个满足条件的区间的右端，一定是所有满足条件的区间中最小的！），然后依次进行直到将所有的区间找完。</p>
+<h2 id="代码的具体实现："><a href="#代码的具体实现：" class="headerlink" title="代码的具体实现："></a>代码的具体实现：</h2></li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&quot;iostream&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&quot;vector&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&quot;algorithm&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt; a, vector&lt;<span class="keyword">int</span>&gt; b)</span>  <span class="comment">//自我实现的排序函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (a[<span class="number">1</span>] &lt; b[<span class="number">1</span>])</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">eraseOverlapIntervals</span><span class="params">(vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt;&amp; intervals)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">sort</span>(intervals.<span class="built_in">begin</span>(), intervals.<span class="built_in">end</span>(), cmp);   <span class="comment">//对所有的区间按照右端排序。</span></span><br><span class="line">		<span class="keyword">int</span> count = <span class="number">1</span>;            <span class="comment">//计数，记录剩下的区间有几个</span></span><br><span class="line">		<span class="keyword">int</span> end = intervals[<span class="number">0</span>][<span class="number">1</span>];<span class="comment">//将第一个的右端点作为标志</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; intervals.<span class="built_in">size</span>(); i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (intervals[i][<span class="number">0</span>] &gt;= end)</span><br><span class="line">			&#123;</span><br><span class="line">				end = intervals[i][<span class="number">1</span>];</span><br><span class="line">				count++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> intervals.<span class="built_in">size</span>() - count;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">v</span>(<span class="number">4</span>);</span><br><span class="line">	v[<span class="number">0</span>].<span class="built_in">push_back</span>(<span class="number">1</span>);</span><br><span class="line">	v[<span class="number">0</span>].<span class="built_in">push_back</span>(<span class="number">2</span>);</span><br><span class="line">	v[<span class="number">1</span>].<span class="built_in">push_back</span>(<span class="number">2</span>);</span><br><span class="line">	v[<span class="number">1</span>].<span class="built_in">push_back</span>(<span class="number">3</span>);</span><br><span class="line">	v[<span class="number">2</span>].<span class="built_in">push_back</span>(<span class="number">3</span>);</span><br><span class="line">	v[<span class="number">2</span>].<span class="built_in">push_back</span>(<span class="number">4</span>);</span><br><span class="line">	v[<span class="number">3</span>].<span class="built_in">push_back</span>(<span class="number">1</span>);</span><br><span class="line">	v[<span class="number">3</span>].<span class="built_in">push_back</span>(<span class="number">4</span>);</span><br><span class="line">	Solution s;</span><br><span class="line">	cout &lt;&lt; s.<span class="built_in">eraseOverlapIntervals</span>(v) &lt;&lt; endl;</span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;`</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>但是我这样还有一点问题。。。叫的时候WA了三发，去看了一下答案，原来是没有判断vector为空的情况。。。看来还是需要注意细节。</li>
+<li>也算是第一次亲手写博客，刚开始学算法，现在做题还是靠看题解得到思路，希望自己早日自己解决难题！</li>
+</ul>
+
+    </div>
+
+    
+        <hr class="fhr">
+        <div id="vcomments"></div>
+    
+</div>
+    <div class="footer" id="footer">
+    <p><h4>Copyright © 2020 | Author: Lu Xinyuan | Theme By <a class="theme-author" target="_blank" rel="noopener" href="https://github.com/Xunzhuo/hexo-theme-coder" style="font-size:14px; color: #969696">Coder</a></h4>
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <span id="busuanzi_container_site_pv">Page Views: <span id="busuanzi_value_site_pv"></span></span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv">Unique Visitors: <span id="busuanzi_value_site_uv"></span></span>
+    
+    <label class="el-switch el-switch-blue el-switch-sm" style="vertical-align: sub;">
+        <input type="checkbox" name="switch" id="update_style">
+        <span class="el-switch-style"></span>
+    </label>
+
+    <!--         <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1278548644'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/stat.php%3Fid%3D1278548644%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script> -->
+</p>
+</div>
+
+<input type="hidden" id="web_style" value="black">
+<input type="hidden" id="valine_appid" value="NOsswOncKgc8HOxqo9oxIWlX-gzGzoHsz">
+<input type="hidden" id="valine_appKey" value="z1FihjWEbS8uIfUQdmCtK7zz">
+
+<script src="/libs/jquery.min.js"></script>
+
+
+<script src="/libs/highlight/highlight.pack.js"></script>
+
+<script src='//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+
+<script src="/js/js.js"></script>
+
+<style type="text/css">
+.v * {
+color: #698fca;
+}
+.v .vlist .vcard .vhead .vsys {
+color: #3a3e4a;
+}
+.v .vlist .vcard .vh .vmeta .vat {
+color: #638fd5;
+}
+.v .vlist .vcard .vhead .vnick {
+color: #6ba1ff;
+}
+.v a {
+color: #8696b1;
+}
+.v .vlist .vcard .vhead .vnick:hover {
+color: #669bfc;
+}
+</style>
+    <script type="text/javascript" color="173,174,173" opacity='1' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+</body>
+</html>
