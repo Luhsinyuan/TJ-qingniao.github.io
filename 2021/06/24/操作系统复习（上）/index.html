@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="google-site-verification" content="TZE0rZyIqLl10trYu3BWBWa1Vmz6HFwhb2OcNEK4u-s" />
+     <link rel="shortcut icon" href= /img/favicon.ico >
+    <title>
+        Be Better
+    </title>
+    <meta name="description" content= My personal blog. >
+    <meta name="keywords" content= Blog,Hexo >
+    
+<link rel="stylesheet" href="/libs/highlight/styles/monokai-sublime.css">
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body id="bodyx">
+    <div class="hd posts">
+    <a href="/index.html"><i class="fa fa-home
+ replay-btn" aria-hidden="true"></i></a>
+    <div class="post-title">
+        <p>
+            操作系统复习（上）
+        </p>
+        <hr>
+    </div>
+    <div class="post-content">
+        <h2 id="第一章：概述"><a href="#第一章：概述" class="headerlink" title="第一章：概述"></a>第一章：概述</h2><ol>
+<li><p><em>什么是操作系统？理解从不同角度对其定义，如控制程序、资源管 理器，内核程序等。</em></p>
+<p><strong>操作系统是管理计算机硬件的程序，它还为应用程序提供基础，并且充当计算机硬件和计算机用户的中介。</strong></p>
+</li>
+<li><p><em>操作系统的层次定位？即向上提供服务，向下提供管理。</em></p>
+</li>
+<li><p><em>操作系统的作用？其逻辑功能模块有哪些？分别完成的事情是什么？</em></p>
+<p>​    <strong>（1） 处理器管理。当多个程序同时运行时，解决处理器(CPU)时间的分配问题。</strong><br>​    <strong>（2） 作业管理。完成某个独立任务的程序及其所需的数据组成一个作业。作业管理的任务主要是为用户提供一个使用计算机的界面使其方便地运行自己的作业，并对所有进入系统的作业进行调度和控制，尽可能高效地利用整个系统的资源。</strong><br>​    <strong>（3） 存储器管理。为各个程序及其使用的数据分配存储空间，并保证它们互不干扰。</strong><br>​    <strong>（4） 设备管理。根据用户提出使用设备的请求进行设备分配，同时还能随时接收设备的请求（称为中断），如要求输入信息。</strong><br>​    <strong>（5） 文件管理。主要负责文件的存储、检索、共享和保护，为用户提供文件操作的方便。</strong></p>
+</li>
+<li><p><em>操作系统设计目标是什么？</em></p>
+<p><strong>方便性和有效性</strong></p>
+</li>
+<li><p><em>操作系统这个软件发展经历的过程？如从一段控制程序，到批处 理，到分时系统、并行。。。。</em></p>
+<p><strong>从分时系统到PC系统，再到并行系统，再到多处理器，再到分布式系统，最后是实时系统</strong></p>
+<p><strong>发展规律：由底层硬件、软件技术与上层应用需求的发展所推动</strong></p>
+</li>
+</ol>
+<h2 id="第二章：硬件环境"><a href="#第二章：硬件环境" class="headerlink" title="第二章：硬件环境"></a>第二章：硬件环境</h2><ol>
+<li><p><em>金字塔式的存储体系</em></p>
+<p><strong>第二章PPT  P20</strong></p>
+<p><strong>依次是寄存器，cache，主存，外存</strong></p>
+</li>
+<li><p><em>常用的 I/O 方式</em></p>
+<p><strong>同步式和异步式</strong></p>
+</li>
+</ol>
+<p>​        <strong>同步IO：</strong></p>
+<ul>
+<li><p><strong>I/O启动后，只有当I/O完成后控制权才返回给用户进程</strong></p>
+</li>
+<li><p><strong>使CPU空闲循环等待，直到下一个中断开始</strong></p>
+</li>
+<li><p><strong>在任何时候最多只能处理一个I/O请求</strong></p>
+<p><strong>异步I/O</strong></p>
+</li>
+<li><p><strong>I/O启动后，控制权无需等待I/O操作完成就可以返回给用户进程</strong></p>
+</li>
+</ul>
+<h2 id="第三章：操作系统体系结构"><a href="#第三章：操作系统体系结构" class="headerlink" title="第三章：操作系统体系结构"></a>第三章：操作系统体系结构</h2><ol>
+<li><p><em>理解功能、服务、和调用之间的关系，体会即可。</em></p>
+</li>
+<li><p><em>操作系统软件的体系发展阶段，如单一体系、核心层次体系、微内 核的体系等等。</em></p>
+</li>
+<li><p><em>目前操作系统设计中常采用什么结构？</em></p>
+</li>
+</ol>
+<p><strong>微内核结构</strong></p>
+<ol start="4">
+<li><p><em>操作系统的设计目标。</em></p>
+<p><strong>用户目标：</strong></p>
+<p><strong>1. OS应该便于使用</strong></p>
+<p><strong>2.易于学习</strong></p>
+<p><strong>3.可靠</strong></p>
+<p><strong>4.安全与快速</strong></p>
+<p><strong>系统目标：</strong></p>
+<p><strong>1.易设计、实现和维护</strong></p>
+<p><strong>2.应该灵活、可靠、没有错误且高效</strong></p>
+</li>
+</ol>
+<h2 id="第四章：进程基础"><a href="#第四章：进程基础" class="headerlink" title="第四章：进程基础"></a>第四章：进程基础</h2><ol>
+<li><em>什么是进程？为什么引入进程？</em></li>
+</ol>
+<p><strong>进程是进程实体的运行过程，是系统进行资源分配和调度的独立单位</strong></p>
+<p><strong>旨在清晰地描述动态系统的内在规律，有效地管理和调度运行到计算机系统主内存中的程序。</strong></p>
+<ol start="2">
+<li><em>进程与线程，与程序的区别。</em></li>
+</ol>
+<p><strong>进程与程序区别</strong></p>
+<ul>
+<li><p><strong>进程是由程序和数据两部分组成的；</strong></p>
+</li>
+<li><p><strong>进程有生命周期，有诞生有消亡，短暂的；而程序是相对长久的；</strong></p>
+</li>
+<li><p><strong>程序是静态的，进程是动态的；</strong></p>
+</li>
+<li><p><strong>进程具有创建其他进程功能，而程序没有；</strong></p>
+</li>
+<li><p><strong>进程更能真实地描述并发，而程序不能。</strong></p>
+</li>
+</ul>
+<ol start="3">
+<li><em>进程的组成部分？进程有哪些特征？</em></li>
+</ol>
+<p><strong>进程组成</strong></p>
+<ul>
+<li><p><strong>PCB</strong></p>
+</li>
+<li><p><strong>program</strong></p>
+</li>
+<li><p><strong>data section</strong></p>
+</li>
+<li><p><strong>stack</strong></p>
+</li>
+</ul>
+<p><strong>进程特征</strong></p>
+<ul>
+<li><p><strong>并发性</strong></p>
+</li>
+<li><p><strong>动态性</strong></p>
+</li>
+<li><p><strong>独立性</strong></p>
+</li>
+<li><p><strong>交互性</strong></p>
+</li>
+<li><p><strong>异步性</strong></p>
+</li>
+<li><p><strong>结构性</strong></p>
+</li>
+</ul>
+<ol start="4">
+<li><em>进程的状态变化体现了其运动的过程？各个状态的含义等。理解 三状态图的变化和运动的过程，以及导致状态变化的事件等。</em></li>
+</ol>
+<p><strong>进程状态</strong></p>
+<ul>
+<li><p><strong>新建状态：进程正处于创建状态，尚未转到就绪状态</strong></p>
+</li>
+<li><p><strong>运行状态：进程正在运行，</strong></p>
+</li>
+<li><p><strong>等待状态：又叫阻塞状态，进程在等待某一时间而暂停运行</strong></p>
+</li>
+<li><p><strong>就绪状态：进程处于准备运行的状态，得到处理机便可运行</strong></p>
+</li>
+<li><p><strong>终止状态：进程正从系统中消失</strong></p>
+</li>
+</ul>
+<p><strong>进程的状态变化：第三章PPT p12</strong></p>
+<ol start="5">
+<li><em>PCB 数据结构是什么样子的？存放在系统区还是其他地方？是系 统维护还是用户维护？PCB 对于进程来说，是其存在的唯一标志。</em></li>
+</ol>
+<p><strong>PCB内容</strong> </p>
+<ul>
+<li><p><strong>Process state</strong></p>
+</li>
+<li><p><strong>Program counter</strong></p>
+</li>
+<li><p><strong>CPU registers</strong></p>
+</li>
+<li><p><strong>CPU scheduling information</strong></p>
+</li>
+<li><p><strong>Memory-management information</strong></p>
+</li>
+<li><p><strong>Accounting information</strong></p>
+</li>
+<li><p><strong>I/O status information</strong></p>
+<p><strong>存放在系统区，由系统维护</strong></p>
+</li>
+</ul>
+<ol start="6">
+<li><em>什么是进程调度？调度过程表现在进程状态变化中是什么样子的， 对照三状态图说明。</em></li>
+</ol>
+<p><strong>选择一个可用的进程到CPU上执行叫做进程调度</strong></p>
+<ol start="7">
+<li><em>什么是中级调度？我们 CPU 调度是什么调度？</em></li>
+</ol>
+<p><strong>高级调度</strong></p>
+<ul>
+<li><p><strong>也称为作业调度或宏观调度；</strong></p>
+</li>
+<li><p><strong>高级调度的时间尺度通常是分钟、小时或天。</strong></p>
+</li>
+</ul>
+<p><strong>中级调度</strong></p>
+<ul>
+<li><p><strong>涉及进程在内外存间的交换;</strong></p>
+</li>
+<li><p><strong>从存储器资源管理的角度来看，把进程部分或全部换出到外存上，可为当前运-行进程的执行提供所需内存空间，将当前进程所需部分换入到内存。指令和数据必须在内存里才能被处理机直接访问</strong></p>
+</li>
+</ul>
+<p><strong>低级调度</strong></p>
+<ul>
+<li><p><strong>也称微观调度；</strong></p>
+</li>
+<li><p><strong>从处理机资源分配角度来看，处理机需要经常选择就绪进程或线程进入运行状态；</strong></p>
+</li>
+<li><p><strong>低级调度的时间尺度通常是毫秒级的；</strong></p>
+</li>
+<li><p><strong>由于低级调度算法使用频繁，要求在实现时做到高效。</strong></p>
+</li>
+</ul>
+<p><strong>CPU调度是低级调度</strong></p>
+<ol start="8">
+<li><em>抢占调度和非抢占调度？引起调度的事件有哪些，可举例。</em></li>
+</ol>
+<p><strong>非抢占式（Nonpreemptive）： 让进程运行直到结束或阻塞的调度方式 容易实现 适合专用系统，不适合通用系统</strong></p>
+<p><strong>抢占式（Preemptive）：允许将逻辑上可继续运行的在运行过程暂停的调度方式 可防止单一进程长时间独占CPU 系统开销大（降低途径：硬件实现进程切换，或扩充主存以贮存大部分程序</strong></p>
+<p><strong>CPU 调度决策可以在如下四种环境下发生：</strong></p>
+<ul>
+<li><strong>当一个进程从运行状态切换到等待状态（例如，I/O请求，或者调用 wait 等待一个子进程的终止）</strong></li>
+<li><strong>当一个进程从运行状态切换到就绪状态（例如当出现中断时）</strong></li>
+<li><strong>当一个进程从等待状态切换到就绪状态（例如 I/O 完成）</strong></li>
+<li><strong>当一个进程终止时</strong></li>
+</ul>
+<ol start="9">
+<li><em>什么是原语？进程控制是在做什么？进程创建做什么？进程终止 在做什么？父子进程创建的含义？</em></li>
+</ol>
+<p><strong>原语指的是处于操作系统底层被调用频繁的，具有原子性的程序</strong></p>
+<p><strong>进程控制是在对系统中的所有进程实施有效的管理，它具有创建新进程，撤销已有进程、实现进程状态切换等功能。</strong></p>
+<p><strong>进程创建与进程终止做了以及父子进程的含义什么具体在操作系统考研书PDFp30</strong></p>
+<ol start="10">
+<li><em>进程之间的联系？如同步，互斥，通信，理解每种联系的含义，并 举例说明。如果进程之间没有上面的联系，那么他们之间真的没有 什么关系么？如果有，是什么关系呢？</em></li>
+</ol>
+<p><strong>同步：</strong></p>
+<p><strong>指完成同一个任务的伙伴进程间，因为在某些位置上需要协调它们的工作而相互等待、相互交换信息所产生的制约关系。</strong></p>
+<p><strong>也可以说是并发进程互相共享对方的私有资源而引起的直接制约。</strong></p>
+<p><strong>例子：售票员和司机</strong></p>
+<p><strong>互斥：</strong></p>
+<p><strong>进程互斥概念进程间因竞争共享公有资源而引起的间接制约关系，称为互斥。</strong></p>
+<p><strong>间接是指：各并发进程的速度受公有资源制约，而不是进程间直接制约。</strong></p>
+<p><strong>例子：不同进程对于同一个变量的读写</strong></p>
+<p><strong>通信：</strong></p>
+<p><strong>指进程之间的信息交换。</strong></p>
+<ol start="11">
+<li><em>什么是直接制约关系？什么是间接制约关系？同步是什么制约 关系？互斥呢？进程之间产生制约关系的原因是什么？如果不共 享资源，会产生这个制约关系么？</em></li>
+</ol>
+<p><strong>直接制约关系可以理解为有先后顺序的一种关系。如两个进程A和B，只当A执行了B才执行，则A和B为同步。是由于相互合作而引起的</strong></p>
+<p><strong>间接制约关系可以理解为无固定的先后顺序。如两个进程A和B，A在执行则B不能执行，B在执行则A不执行，同时必须其中一个执行完了，另一个才能执行。是由于共享临界资源引起的</strong></p>
+<p><strong>同步是直接制约关系，互斥是间接制约关系</strong></p>
+<p><strong>会产生直接制约关系</strong></p>
+<ol start="12">
+<li><em>常见的进程间的高级通信方式，如共享存储器、消息机制、管道，体会其通信性能哪种通信效率更快一些？</em></li>
+</ol>
+<p><strong>共享存储器：</strong></p>
+<p><strong>通过共享数据结构或者共享存储区进行通信。</strong></p>
+<p><strong>两种实现类型</strong></p>
+<ul>
+<li><strong>基于共享数据结构的通信方式</strong></li>
+</ul>
+<p> <strong>效率低，适合传递少量数据。</strong></p>
+<ul>
+<li><strong>基于共享存储区的通信方式</strong></li>
+</ul>
+<p> <strong>高级通信方式，可传输大量数据。</strong></p>
+<p><strong>消息传递系统：</strong></p>
+<p><strong>最广泛的通信机制</strong></p>
+<p><strong>两种类型</strong></p>
+<ul>
+<li><strong>直接通信</strong></li>
+</ul>
+<p> <strong>如消息缓冲通信方式</strong></p>
+<ul>
+<li><p><strong>间接通信</strong></p>
+<p><strong>如信箱通信方式</strong></p>
+</li>
+</ul>
+<p><strong>管道：</strong></p>
+<p><strong>也称共享文件方式，基于文件系统，文件作为缓冲传输介质。</strong></p>
+<p><strong>管道通信方式通信效率最高</strong></p>
+<h2 id="第五章：线程基础"><a href="#第五章：线程基础" class="headerlink" title="第五章：线程基础"></a>第五章：线程基础</h2><ol>
+<li><em>为什么要引入线程？动机是什么？</em></li>
+</ol>
+<p><strong>为了减小程序在并发执行时所付出的时空开销，提高操作系统的并发性能</strong></p>
+<ol start="2">
+<li><em>线程和进程之间的关系？至此，进程是资源分配的单位，线程是调 度的单位。</em></li>
+</ol>
+<p><strong>线程是轻量级进程，是一个基本的CPU执行单元，是程序执行流的最小单元</strong></p>
+<ol start="3">
+<li>线程的模式：一对一，一对多。。。。。</li>
+</ol>
+<p><strong>多对一：多个用户级线程映射到一个内核级程序</strong></p>
+<p><strong>一对一：每个用户级线程映射到一个内核级线程</strong></p>
+<p><strong>多对多：n个用户级线程映射到m个内核级线程里，其中m&lt;=n</strong></p>
+<ol start="4">
+<li><em>引入线程的益处。</em></li>
+</ol>
+<h2 id="第六章：进程调度"><a href="#第六章：进程调度" class="headerlink" title="第六章：进程调度"></a>第六章：进程调度</h2><ol>
+<li><em>理解 6 个调度准则的具体含义；</em></li>
+</ol>
+<ul>
+<li><p><strong>CPU利用率</strong></p>
+</li>
+<li><p><strong>系统吞吐量，单位时间CPU完成作业数量</strong></p>
+</li>
+<li><p><strong>周转时间：完成时间减去提交时间</strong></p>
+</li>
+<li><p><strong>等待时间，开始时间减去提交时间</strong></p>
+</li>
+<li><p><strong>响应时间：指用户提交请求到系统首次产生响应的时间</strong></p>
+</li>
+</ul>
+<ol start="2">
+<li><em>最优调度准则</em></li>
+</ol>
+<ul>
+<li><p><strong>最大CPU利用率 （Max CPU utilization）</strong></p>
+</li>
+<li><p><strong>最大吞吐量  （Max throughput）</strong></p>
+</li>
+<li><p><strong>最小周转时间 （Min turnaround time）</strong> </p>
+</li>
+<li><p><strong>最小等待时间 （Min waiting time ）</strong></p>
+</li>
+<li><p><strong>最小响应时间</strong> </p>
+</li>
+</ul>
+<ol start="3">
+<li><p><em>先来先服务，最短作业，优先级调度算法，RR 轮转调度算法，多 级队列以及反馈队列调度算法等的具体过程。</em> </p>
+</li>
+<li><p><em>优先级调度算法存在的饥饿现象是什么呢？怎么解决这个问题呢？</em> </p>
+<p><strong>指低优先级的进程在就绪队列中一直无法被调度</strong></p>
+<p><strong>采用饥饿的方法解决，即随时间推移提高优先级</strong></p>
+</li>
+<li><p><em>如讲义上例题，会表达调度算法的具体过程。</em></p>
+</li>
+<li><p><em>实时调度和 RR 调度的侧重点不同在哪里？</em></p>
+</li>
+</ol>
+<h2 id="进程的互斥与同步"><a href="#进程的互斥与同步" class="headerlink" title="进程的互斥与同步"></a>进程的互斥与同步</h2><p><em>1. 什么是临界区？什么是临界资源？在临界资源上通常要做互斥 的处理。</em></p>
+<p><strong>一次仅允许一个进程使用的资源称为临界资源</strong></p>
+<p><strong>访问临界资源的代码叫做临界区，除此之外还有进入区，退出区，剩余区</strong></p>
+<p><em>2. 临界资源的使用原则，理解其中含义。</em></p>
+<p><strong>一次只允许一个进程使用</strong></p>
+<p>*3. 进程之间有几种关系需要协作？作为操作系统设计者，我们关注 哪两种关系的协作实现？ *</p>
+<p><strong>同步，互斥</strong></p>
+<p>*4. 进程间协作实现 ，可以通过哪些层面去完成？如应用程序层面？ 操作系统？硬件层面？ *</p>
+<p><em>5. 实现进程互斥的软件方法以及硬件方法，各自优缺点？忙等待的 含义？</em></p>
+<p><strong>软件：</strong></p>
+<ol>
+<li><p><strong>单标志</strong></p>
+</li>
+<li><p><strong>双标志先检查</strong></p>
+</li>
+<li><p><strong>双标志后检查</strong></p>
+</li>
+<li><p><strong>Peterson’s Algorithm</strong></p>
+</li>
+</ol>
+<p><strong>临界区问题软件解决方法缺点：</strong></p>
+<p><strong>忙等待；</strong></p>
+<p><strong>实现过于复杂，需要高的编程技巧</strong>。</p>
+<p><strong>硬件：</strong></p>
+<ol>
+<li><p><strong>TEST and SET指令</strong></p>
+</li>
+<li><p><strong>SWAP指令</strong></p>
+</li>
+<li><p><strong>开关中断指令</strong></p>
+</li>
+</ol>
+<p><strong>硬件解决方法优点：</strong></p>
+<p><strong>适用于任意数目进程；</strong></p>
+<p><strong>解决方法简单，容易验证其正确性；</strong></p>
+<p><strong>可支持进程内存在多个临界区。</strong></p>
+<p><strong>硬件解决方法缺点：</strong></p>
+<p><strong>等待要耗费CPU时间，不能实现“让权等待”</strong></p>
+<p><strong>可能存在“饥饿”现象；</strong></p>
+<p><strong>可能产生死锁。</strong></p>
+<p><strong>忙等待是操作系统中的处理进程同步时遇到的一种问题。即当一个进程位于其临界区内，任何试图进入其临界区的进程都必须在进入代码连续循环</strong></p>
+<ol>
+<li><p><em>信号量的含义？数据结构？通过什么方法来修改信号量？初值 的确定。</em> </p>
+<p><strong>代表资源的实体，是一个与队列有关的整型变量</strong></p>
+<p><strong>数据结构：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">semaphore</span> </span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">   &#123;</span></span><br><span class="line"></span><br><span class="line">​    <span class="keyword">int</span> value;</span><br><span class="line"></span><br><span class="line">​    pointer_PCB queue; <span class="comment">//阻塞在该信号量的各个进程的标识            </span></span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>通过初始化和PV原语来访问和修改</strong></p>
+<p><strong>有多少个资源就将初值设为多少</strong></p>
+</li>
+<li><p><em>P/V 原语操作过程？</em></p>
+<p><strong>P原语P（S）</strong></p>
+<p><strong>① S=S-1</strong></p>
+<p><strong>② 如果s&gt;=0,则调用P(S)的进程继续运行</strong></p>
+<p><strong>③ 如果s&lt;0,则调用P(S)的进程被阻塞，并把它插入到等待信号量S的阻塞队列中。</strong></p>
+<p><strong>V原语V(S)</strong> </p>
+<p><strong>① S=S＋1</strong></p>
+<p><strong>② 如果s&gt;0,则调用V(S)的进程继续运行</strong></p>
+<p><strong>③ 如果s&lt;＝0,则从等待信号量s的阻塞队列中唤醒头一个进程到就绪队列中，然后调用v(s)的进程继续运行。</strong></p>
+</li>
+<li><p><em>P/V 操作实现进程同步的伪代码？记得确定初值和信号量定义。</em></p>
+<p><strong>实现进程同步</strong></p>
+<p><strong>前驱关系，为每个前趋关系设置一个同步信号量S12，其初值为0。</strong></p>
+<p><strong>执行如下伪代码：</strong></p>
+<p><strong>P1进程：</strong></p>
+<p><strong>C1</strong></p>
+<p><strong>V(S12);</strong></p>
+<p><strong>P2进程：</strong></p>
+<p><strong>P(S12);</strong></p>
+<p><strong>C2</strong></p>
+<p><strong>含义是只能先执行P1，再执行P2，反过来则无法执行。</strong></p>
+</li>
+<li><p><em>P/V 操作实现进程互斥伪代码？记得确定初值和信号量定义。</em> </p>
+<p><strong>实现进程互斥</strong></p>
+<p><strong>为临界资源设置一个互斥信号量mutex，初值为1；</strong></p>
+<p><strong>在每个进程中，将临界区代码置于P(mutex)和V(mutex)原语之间。</strong></p>
+<p><strong>执行如下伪代码：</strong></p>
+<p><strong>P(mutex);</strong></p>
+<p>​    <strong>critical section</strong></p>
+<p><strong>V(mutex);</strong></p>
+<p>​    <strong>remainder section</strong></p>
+</li>
+<li><p><em>基于信号量机制的进程协作方法的优缺点？</em></p>
+</li>
+</ol>
+<p><strong>P/V机制优缺点</strong></p>
+<ul>
+<li><p><strong>简单，而且表达能力强</strong></p>
+</li>
+<li><p><strong>不够安全，使用不当会出现死锁；</strong></p>
+</li>
+<li><p><strong>遇到复杂同步互斥问题时实现复杂</strong></p>
+</li>
+</ul>
+<p><strong>P/V操作必须成对出现</strong></p>
+<ul>
+<li><p><strong>当为互斥操作时，它们同处于同一进程</strong></p>
+</li>
+<li><p><strong>当为同步操作时，则不在同一进程中出现</strong></p>
+</li>
+<li><p><strong>如果P(S1)和P(S2)两个操作在一起，那么P操作顺序至关重要。</strong></p>
+</li>
+</ul>
+
+    </div>
+
+    
+        <hr class="fhr">
+        <div id="vcomments"></div>
+    
+</div>
+    <div class="footer" id="footer">
+    <p><h4>Copyright © 2020 | Author: Lu Xinyuan | Theme By <a class="theme-author" target="_blank" rel="noopener" href="https://github.com/Xunzhuo/hexo-theme-coder" style="font-size:14px; color: #969696">Coder</a></h4>
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <span id="busuanzi_container_site_pv">Page Views: <span id="busuanzi_value_site_pv"></span></span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv">Unique Visitors: <span id="busuanzi_value_site_uv"></span></span>
+    
+    <label class="el-switch el-switch-blue el-switch-sm" style="vertical-align: sub;">
+        <input type="checkbox" name="switch" id="update_style">
+        <span class="el-switch-style"></span>
+    </label>
+
+    <!--         <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1278548644'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/stat.php%3Fid%3D1278548644%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script> -->
+</p>
+</div>
+
+<input type="hidden" id="web_style" value="black">
+<input type="hidden" id="valine_appid" value="NOsswOncKgc8HOxqo9oxIWlX-gzGzoHsz">
+<input type="hidden" id="valine_appKey" value="z1FihjWEbS8uIfUQdmCtK7zz">
+
+<script src="/libs/jquery.min.js"></script>
+
+
+<script src="/libs/highlight/highlight.pack.js"></script>
+
+<script src='//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+
+<script src="/js/js.js"></script>
+
+<style type="text/css">
+.v * {
+color: #698fca;
+}
+.v .vlist .vcard .vhead .vsys {
+color: #3a3e4a;
+}
+.v .vlist .vcard .vh .vmeta .vat {
+color: #638fd5;
+}
+.v .vlist .vcard .vhead .vnick {
+color: #6ba1ff;
+}
+.v a {
+color: #8696b1;
+}
+.v .vlist .vcard .vhead .vnick:hover {
+color: #669bfc;
+}
+</style>
+    <script type="text/javascript" color="173,174,173" opacity='1' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+</body>
+</html>
