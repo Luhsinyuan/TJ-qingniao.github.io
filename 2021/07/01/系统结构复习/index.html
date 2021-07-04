@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="google-site-verification" content="TZE0rZyIqLl10trYu3BWBWa1Vmz6HFwhb2OcNEK4u-s" />
+     <link rel="shortcut icon" href= /img/favicon.ico >
+    <title>
+        Be Better
+    </title>
+    <meta name="description" content= My personal blog. >
+    <meta name="keywords" content= Blog,Hexo >
+    
+<link rel="stylesheet" href="/libs/highlight/styles/monokai-sublime.css">
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body id="bodyx">
+    <div class="hd posts">
+    <a href="/index.html"><i class="fa fa-home
+ replay-btn" aria-hidden="true"></i></a>
+    <div class="post-title">
+        <p>
+            系统结构复习
+        </p>
+        <hr>
+    </div>
+    <div class="post-content">
+        <h1 id="系统结构复习"><a href="#系统结构复习" class="headerlink" title="系统结构复习"></a>系统结构复习</h1><h2 id="第一章-计算机系统结构概述"><a href="#第一章-计算机系统结构概述" class="headerlink" title="第一章 计算机系统结构概述"></a>第一章 计算机系统结构概述</h2><p>第一章 计算机系统结构的基本概念</p>
+<p>第一次课–课后思考题：3月3日 </p>
+<ol>
+<li><p>了解计算机发展过程，及两个因素：制造技术（客观）与系统结构（主观）在不同时期起到的作用；</p>
+</li>
+<li><p>掌握从计算机语言角度对计算机系统的多级层次结构；</p>
+<p><strong>第六级：应用语言虚拟机</strong></p>
+<p><strong>第五级：高级语言虚拟机</strong></p>
+<p><strong>第四级：汇编语言虚拟机</strong></p>
+<p><strong>第三级：操作系统虚拟机</strong></p>
+<p><strong>第二级：机器语言</strong></p>
+<p><strong>第一级：微程序机器级</strong></p>
+</li>
+<li><p>计算机系统结构的定义是什么？如何理解？</p>
+</li>
+</ol>
+<p><strong>定义一：由指令集结构，组成结构和硬件组成</strong></p>
+<p><strong>定义二：确定计算机系统中软硬件的界面</strong></p>
+<ol start="4">
+<li>如何理解透明性：将本来存在的事物或属性从某种角度看又好像不存，它的好处是什么？</li>
+</ol>
+<p>8、现代计算机中，系统结构包含的属性都包含哪些具体方面？</p>
+<p><strong>指令系统</strong></p>
+<p><strong>数据表示</strong></p>
+<p><strong>寻址规则</strong></p>
+<p><strong>寄存器定义</strong></p>
+<p><strong>中断系统</strong></p>
+<p><strong>机器工作状态的定义和切换</strong></p>
+<p><strong>存储系统</strong></p>
+<p><strong>信息保护</strong></p>
+<p><strong>I/O系统</strong></p>
+<p>第二次课–课后思考题：3月10日 </p>
+<p>1、 计算机系统结构的实质是什么？</p>
+<p><strong>确定计算机系统中的软硬件的界面，界面之上是软件实现的功能，界面之下是硬件和固件实现的功能。</strong></p>
+<p>2、 计算机系统结构、组成和实现分别解决什么问题？</p>
+<p><strong>系统结构：确定软硬件的界面</strong></p>
+<p><strong>组成：着眼于物理机器级内各事件的排序方式，各部件的功能以及联系</strong></p>
+<p><strong>实现：着眼于器件技术和微组装技术</strong></p>
+<p>3、 Flynn分类法是依据什么对系统进行分类的？</p>
+<p><strong>指令流和数据流的多倍性</strong></p>
+<p>4、 计算机系统设计中常用的4个定量原理是什么？</p>
+<p><strong>以经常性事件为重点</strong></p>
+<p><strong>Amdahl定律</strong></p>
+<p><strong>CPU性能公式</strong></p>
+<p><strong>程序的局部性原理</strong></p>
+<p>5、 系统的时钟周期、指令的平均执行周期数CPI和程序的指令条数IC分别受制于什么因素？</p>
+<p><strong>时钟周期：取决于硬件实现技术和计算机组成</strong></p>
+<p><strong>CPI：取决于计算机组成和指令集结构</strong></p>
+<p><strong>IC：取决于指令集结构和编译技术</strong></p>
+<p>6、 什么是程序的时间局部性和空间局部性？</p>
+<p><strong>时间局部性（</strong>temporal locality）</p>
+<p><strong>时间局部性指的是：被引用过一次的存储器位置在未来会被多次引用（通常在循环中）。</strong> </p>
+<p><strong>空间局部性（</strong>spatial locality）</p>
+<p><strong>如果一个存储器的位置被引用，那么将来他附近的位置也会被引用。</strong></p>
+<p>第三次课–课后思考题：3月17日 </p>
+<p>1、 理解计算机系统性能评测指标：执行时间和吞吐率，尤其是执行时间根据上下文具体指什么？</p>
+<p>执行时间有多种定义。</p>
+<p><strong>吞吐率：指单位时间完成的任务数</strong></p>
+<p><strong>执行时间：可以是完成某一个任务所花费的全部时间，也可以是CPU时间</strong></p>
+<p>2、 为什么常用基准测试程序对系统进行性能测试？</p>
+<p> <strong>原始的三种检测方法都有弊端，一是具有片面性，二是可以针对性提高测试程序的性能，没有说服力。</strong></p>
+<p>3、  理解系统性能优劣是相对测试环境和测试对象而言的。</p>
+<p>4、  冯诺依曼结构的特点有哪些？</p>
+<p><strong>计算机以运算器为中心</strong></p>
+<p><strong>在存储器中，指令和数据同等对待</strong></p>
+<p><strong>存储器是按地址访问，按顺序线性编址的一维结构</strong></p>
+<p><strong>指令的执行是顺序的，即一般按照指令在存储器中存放的顺序执行</strong></p>
+<p><strong>指令由操作码和地址码组成</strong></p>
+<p><strong>指令和数据均已二进制编码表示，采用二进制运算</strong></p>
+<p>5、  计算机发展中，在系统结构层面做了哪些改进？</p>
+<p><strong>对输入输出的改进</strong></p>
+<p><strong>采用并行处理技术</strong></p>
+<p><strong>存储器组织结构的发展</strong></p>
+<p><strong>指令集的发展</strong></p>
+<p>6、  系统结构发展受哪些因素影响？简述之。</p>
+<p> <strong>硬件和软件均有</strong></p>
+<p>7、  什么是软件兼容？系列机兼容性的根本特征是什么？</p>
+<p><strong>指一个软件不经修改或者只需少量修改就可以由一台计算机移植到另一台计算机上运行。</strong></p>
+<p><strong>向后兼容</strong></p>
+<p>8、  仿真和模拟的区别是什么？</p>
+<p><strong>模拟指用软件的方法</strong></p>
+<p><strong>仿真指用解释的方法</strong></p>
+<p>9、  提高并行性的途径有哪些？单机和多机系统分别在并行性方面做了哪些工作？</p>
+<p><strong>时间重叠</strong></p>
+<p><strong>资源重复</strong></p>
+<p><strong>资源共享</strong></p>
+<p><strong>单机：</strong></p>
+<p><strong>在时间重叠方面，使用流水线技术</strong></p>
+<p><strong>在资源重复方面，形成阵列处理机</strong></p>
+<p><strong>在资源共享方面，用单处理机模拟多处理机</strong></p>
+<p><strong>多机：</strong></p>
+<p><strong>照着时间重复，资源重复，资源共享原理三个方向发展出了同构性多处理机，异构型多处理机和分布式系统</strong></p>
+<h2 id="第二章-指令集结构"><a href="#第二章-指令集结构" class="headerlink" title="第二章 指令集结构"></a>第二章 指令集结构</h2><h3 id="第一次课–课后思考题：3月17日"><a href="#第一次课–课后思考题：3月17日" class="headerlink" title="第一次课–课后思考题：3月17日"></a>第一次课–课后思考题：3月17日</h3><p>1、 依据CPU中存储操作数的存储单元类型可将指令集分类为哪些类型？</p>
+<p><strong>堆栈型，累加器型，寄存器型</strong></p>
+<p>2、 什么是堆栈型指令结构？简述其特点。</p>
+<p><strong>指操作数放在堆栈中的指令集结构</strong></p>
+<p><strong>特点是指令字比较短，程序占用的空间比较小。</strong></p>
+<h3 id="第二次课–课后思考题：3月24日"><a href="#第二次课–课后思考题：3月24日" class="headerlink" title="第二次课–课后思考题：3月24日"></a>第二次课–课后思考题：3月24日</h3><p>1、 比较堆栈型、累加器型和通用寄存器型指令结构的区别。</p>
+<p><strong>堆栈型指令结构操作数在堆栈中</strong></p>
+<p><strong>累加器型指令结构中一个在存储器中显式给出，另一个隐式给出</strong></p>
+<p><strong>通用寄存器型所有操作数显式给出，一个或者多个来自通用寄存器组。</strong></p>
+<p>2、 理解常用的数据寻址方式，尤其是内存寻址部分。</p>
+<p> <strong>寄存器寻址，立即数寻址，偏移量寻址，寄存器间接寻址，索引寻址，直接寻址或绝对寻址，存储器间接寻址，自增寻址，自减寻址，缩放寻址</strong></p>
+<p>3、 指令集设计的基本要求是什么？理解很多时候具体的指令集设计其实是这些设计要求的一个折中。</p>
+<p><strong>完整性，规整性，高效率和兼容性</strong></p>
+<p>4、 比较CISC和RISC的设计思路和优缺点。</p>
+<p><strong>CISC：复杂指令集电脑，向用户提供数量很多，功能多样的指令</strong></p>
+<p><strong>RISC：精简指令集计算机，有七条设计原则</strong></p>
+<p><strong>CISC缺点：</strong></p>
+<ul>
+<li><p><strong>各种指令的使用频度相差悬殊，许多指令很少用到</strong></p>
+</li>
+<li><p><strong>指令集庞大，指令条数很多，许多指令功能复杂</strong></p>
+</li>
+<li><p><strong>许多指令操作复杂，CPI高</strong></p>
+</li>
+<li><p><strong>由于指令功能复杂，规整性不好，不利于流水技术提高性能</strong></p>
+</li>
+</ul>
+<p><strong>CISC结构主要优点是：</strong></p>
+<ul>
+<li><p><strong>指令丰富，功能强大</strong></p>
+</li>
+<li><p><strong>寻址方式灵活。</strong></p>
+</li>
+<li><p><strong>以微程序控制器为核心，指令存储器与数据存储器共享同一个物理存储空间，性能强大。</strong></p>
+</li>
+</ul>
+<p><strong>RISC结构主要优点是：</strong></p>
+<ul>
+<li><p><strong>具备结构简单、易于设计</strong></p>
+</li>
+<li><p><strong>指令精简，使用率均衡</strong></p>
+</li>
+<li><p><strong>程序执行效率高</strong></p>
+</li>
+</ul>
+<p><strong>RISC结构主要缺点是：</strong></p>
+<ul>
+<li><p><strong>指令数较少，功能不及CISC强大。</strong></p>
+</li>
+<li><p><strong>寻址方式不够灵活。</strong></p>
+</li>
+</ul>
+<h2 id="第三章-流水线技术"><a href="#第三章-流水线技术" class="headerlink" title="第三章 流水线技术"></a>第三章 流水线技术</h2><h3 id="第一次课–课后思考题：3月24日"><a href="#第一次课–课后思考题：3月24日" class="headerlink" title="第一次课–课后思考题：3月24日"></a>第一次课–课后思考题：3月24日</h3><p>1、 为什么要将流水线引入到指令执行中？</p>
+<p><strong>提高吞吐率</strong></p>
+<p>2、 什么是流水线的级（段）和深度？流水线深度是不是越深越好？</p>
+<p><strong>流水线的每个子过程及其功能部件称为流水线的级或段</strong></p>
+<p><strong>流水线的段称为流水线的深度</strong></p>
+<p><strong>并不是</strong> </p>
+<p>3、 会用时空图描述流水线的执行过程。</p>
+<p>4、 什么是流水线的瓶颈？</p>
+<p><strong>流水线中时间比较长的段将成为流水线的瓶颈</strong></p>
+<p>5、 指令流水线中流水寄存器的作用是什么？</p>
+<p><strong>在相邻的两段之间传送数据，以保证提供后边要用到的数据，并把各段处理工作相互隔离。</strong></p>
+<h3 id="第二次课–课后思考题：3月31日"><a href="#第二次课–课后思考题：3月31日" class="headerlink" title="第二次课–课后思考题：3月31日"></a>第二次课–课后思考题：3月31日</h3><p>1、 流水线的特点是什么？</p>
+<p>2、 常见的流水线分类方式有哪些？</p>
+<ul>
+<li><p><strong>按照所完成的功能分：单功能和多功能</strong></p>
+</li>
+<li><p><strong>按照同一时间内各段之间的连接方式：静态流水线和动态流水线</strong></p>
+</li>
+<li><p><strong>按照流水的级别：部件级、处理机级及处理机间</strong></p>
+</li>
+<li><p><strong>按照流水线中是否有反馈回路：线性和非线性，其中非线性指每个段不止仅通过一次，或许要通过多次</strong></p>
+</li>
+<li><p><strong>根据任务流入和流出的顺序是否相同：顺序和乱序流水线</strong></p>
+</li>
+</ul>
+<p>3、 一般常用哪些指标衡量流水线性能？这些指标公式不用死记硬背，要理解含义。</p>
+<p><strong>吞吐率</strong></p>
+<p><strong>加速比</strong></p>
+<p><strong>效率</strong></p>
+<p>4、 流水线设计中常见哪些问题？怎么消除或尽量减少影响？</p>
+<p><strong>1.    瓶颈问题：</strong></p>
+<p><strong>细分瓶颈段，重复设置瓶颈段</strong></p>
+<p><strong>2.    流水线的额外开销</strong></p>
+<p><strong>选择高性能的流水寄存器</strong></p>
+<p><strong>3.    冲突问题</strong></p>
+<h3 id="第三次课–课后思考题：4月7日"><a href="#第三次课–课后思考题：4月7日" class="headerlink" title="第三次课–课后思考题：4月7日"></a>第三次课–课后思考题：4月7日</h3><p>1、 以书上5段流水线为例，熟知针对运算类、访存类、控制类这三类指令在各段的执行细节。</p>
+<p><strong>IF,ID,EX,MEM,WB</strong></p>
+<p>2、 掌握用时间错开的数据通路序列方式描述指令的流水执行。</p>
+<p><strong>P65页</strong></p>
+<p>3、 指令间的相关有哪些类型？它们分别具有什么特征？可以用什么方法消除名相关？</p>
+<p><strong>1.    数据相关：</strong></p>
+<p><strong>2.    名相关，又分为</strong></p>
+<p>​    <strong>a)     反相关</strong></p>
+<p>​    <strong>b)    输出相关</strong></p>
+<p><strong>3.    控制相关</strong></p>
+<p><strong>可以用换名技术消除名相关。</strong></p>
+<p>4、 流水线冲突有哪些类型？它们是由什么引起的？</p>
+<p><strong>1. 结构冲突</strong></p>
+<p><strong>因硬件资源满足不了指令重叠执行的要求而发生的冲突</strong></p>
+<p><strong>2. 数据冲突</strong></p>
+<p><strong>当指令在流水线中重叠执行时，因需要用到前边指令的执行结果而发生的冲突</strong></p>
+<p><strong>3. 控制冲突</strong></p>
+<p><strong>流水线遇到分支指令和其他会改变PC值得指令所引起得冲突</strong></p>
+<p>5、 流水执行中，遇到结构冲突怎么办？</p>
+<p><strong>可以采取停顿一个周期，设置相互独立的指令存储器和数据存储器，或者将统一的cache分为独立的指令cache和数据cache</strong></p>
+<h3 id="第四次课–课后思考题：4月14日"><a href="#第四次课–课后思考题：4月14日" class="headerlink" title="第四次课–课后思考题：4月14日"></a>第四次课–课后思考题：4月14日</h3><p>1、 流水线中数据冲突是怎么造成的？常见有哪些数据冲突，分别对应哪些相关？</p>
+<p><strong>当相关的指令靠的够近时，它们在流水线中的重叠执行或者重新排序会改变指令读/写操作数的顺序，使之不同于它们非流水实现时的顺序</strong></p>
+<ol>
+<li><strong>写后读冲突(RAW)</strong></li>
+</ol>
+<p><strong>对应数据相关</strong></p>
+<ol start="2">
+<li><strong>写后写操作(WAW):</strong></li>
+</ol>
+<p><strong>对应输出相关</strong></p>
+<ol start="3">
+<li><strong>读后写操作</strong></li>
+</ol>
+<p><strong>对应反相关</strong></p>
+<p>2、 为了减少由于数据冲突造成的流水线停顿，常用的硬件方法有哪些？软件方法有哪些？</p>
+<p><strong>硬件：定向技术</strong></p>
+<p><strong>软件：依靠编译器，称为“指令调度”或“流水线调度”</strong></p>
+<p>3、 什么是流水线的控制冲突？为了减少分支延迟，常用的硬件方法是什么？软件方法是什么？</p>
+<p><strong>尽早判断出分支转移是否成功</strong></p>
+<p><strong>尽早计算出分支目标地址</strong></p>
+<p><strong>同时采用，缺一不可</strong></p>
+<p><strong>软件方法：</strong></p>
+<p><strong>1.    预测分支失败</strong></p>
+<p><strong>2.    预测分支成功</strong></p>
+<p><strong>3.    延迟分支</strong></p>
+<p>4、 理解分支槽中的时令条数依据于控制冲突造成的分支延迟周期数。</p>
+<p> <strong>延迟周期有多少个，就会有多少个指令被放入到分支槽中</strong></p>
+<p>5、 如果支持分支预测，那处理机一定要有相应的回退机制，以保证预测失败时能恢复原先状态。</p>
+<p> <strong>完全正确</strong></p>
+<h3 id="第五次课–课后思考题：4月21日"><a href="#第五次课–课后思考题：4月21日" class="headerlink" title="第五次课–课后思考题：4月21日"></a>第五次课–课后思考题：4月21日</h3><p><strong>流水寄存器：</strong></p>
+<ol>
+<li><p><strong>将各段的工作隔开，使它们不会互相干扰</strong></p>
+</li>
+<li><p><strong>保存相应段的处理结果</strong></p>
+</li>
+<li><p><strong>向后传递后边要用的数据或者控制信息</strong></p>
+</li>
+<li><p><strong>了解之前介绍的定向技术和硬件锁机制在该流水线中的具体实现。</strong></p>
+</li>
+</ol>
+<p>5、 为了进一步减少控制冲突带来的停顿，理解图3.39做了什么？</p>
+<p><strong>把分支指令的条件测试和分支目标地址计算提前到ID段执行。</strong></p>
+<h2 id="第四章-指令级并行"><a href="#第四章-指令级并行" class="headerlink" title="第四章 指令级并行"></a>第四章 指令级并行</h2><h3 id="第一次课–课后思考题：4月28日"><a href="#第一次课–课后思考题：4月28日" class="headerlink" title="第一次课–课后思考题：4月28日"></a>第一次课–课后思考题：4月28日</h3><p>1、 本章重点：流水线有了，怎么进一步提高指令的并行度？（减少冲突，即流水线的停顿时间）</p>
+<p>2、 实际CPI由哪些部分组成？本章都在围绕如何减少CPI展开。</p>
+<p><strong>CPI=CPI(理想)+结构冲突停顿+数据冲突停顿+控制冲突停顿</strong></p>
+<p>3、 什么是基础程序块？挖掘指令级并行为什么要跨越基础块？</p>
+<p><strong>如果一串连续的代码除了入口和出口外，没有其他的分支指令和转入点，则称之为一个基本程序块</strong></p>
+<p><strong>基础程序块较小，平均4到7行指令就会有分支，在基础程序块中开发指令级并行的意义不大，因此要跨越多个程序块开发</strong></p>
+<p>4、 循环级并行是跨越基础块常见的技术，其中主流的循环展开技术思路是什么？（预习4.5节）</p>
+<p>5、 复习指令相关和流水线冲突。</p>
+<p>6、 对相关的处理方案有哪些？每种方案的具体软、硬件技术有哪些？（软件部分第三章讲了，硬件部分在本章介绍）</p>
+<p>7、 什么是程序顺序？它是流水执行的依据。</p>
+<p><strong>指由源程序确定的在完全串行方式下指令的执行方式</strong></p>
+<p>8、 控制相关为什么可以打破？打破控制相关的好处是什么？在什么前提下可以打破？ </p>
+<p><strong>如果不遵守控制相关的依赖关系对于程序的正确性完全没有影响，那么就可以这么做</strong></p>
+<p>9、 保持异常行为是什么意思？保持数据流是什么意思？</p>
+<p> <strong>指令执行顺序的改变不能导致程序中发生新的异常</strong></p>
+<p><strong>数据流指数据值从其产生者指令到其消费者指令的实际流动</strong></p>
+<h3 id="第二次课–课后思考题：5月8日"><a href="#第二次课–课后思考题：5月8日" class="headerlink" title="第二次课–课后思考题：5月8日"></a>第二次课–课后思考题：5月8日</h3><p>1、 什么是指令的静态调度和动态调度，他们优缺点是什么？理解现实中往往两者结合使用。</p>
+<p><strong>静态调度：在编译期间进行代码调度和优化</strong></p>
+<p><strong>动态调度：在执行过程中，依靠专门的硬件对代码进行调度</strong></p>
+<p><strong>动态调度的优点：</strong></p>
+<ul>
+<li><p><strong>能够处理一些编译时情况不明的相关，并简化编译器</strong></p>
+</li>
+<li><p><strong>能够使本来是面向某一流水线优化编译的代码在其他流水线上也能高效的运行</strong></p>
+</li>
+</ul>
+<p>2、 指令调度后的乱序执行会带来什么问题？怎么解决？</p>
+<p><strong>乱序执行会导致WAR和WAW，使用Tomasulo算法消除</strong></p>
+<p>3、 观看线上课程相关内容，下载相关课程资料。针对教材例4.1、4.2实例理解Tomasulo算法执行思路和细节，它的换名和第三章的编译器换名的异同是什么？其中CDB的作用是什么？结合我们之前的定向技术理解CDB的作用。</p>
+<p>4、 做实验五相关Tomasulo算法实验。</p>
+<h3 id="第三次课–课后思考题：5月12日"><a href="#第三次课–课后思考题：5月12日" class="headerlink" title="第三次课–课后思考题：5月12日"></a>第三次课–课后思考题：5月12日</h3><p>1、 动态分支预测技术和第三章的分支预测有什么区别？</p>
+<p><strong>第三章的预测是静态预测，是预先定好的，与分支的实际执行结果无关</strong></p>
+<p><strong>动态分支预测是在执行时根据分支指令过去的表现来预测将来的行为</strong></p>
+<p>2、 常用的动态预测手段有哪些？BTB适用于什么场合？</p>
+<ul>
+<li><strong>采用分支历史表BHT</strong></li>
+<li><strong>采用分支目标缓冲器BTB</strong></li>
+</ul>
+<p><strong>适用于高性能多流出的处理机</strong></p>
+<p>3、 理解前瞻执行的基本思想，乱序执行的好处和问题是什么？</p>
+<p>4、 针对教材例4.3实例理解前瞻执行算法执行思路和细节，它是如何做到乱序执行、顺序确认的？</p>
+<p>5、 做实验六相关实验，加深对前瞻执行算法的理解。</p>
+<h2 id="Tomasulo算法"><a href="#Tomasulo算法" class="headerlink" title="Tomasulo算法"></a>Tomasulo算法</h2><ol>
+<li><p>指令执行步骤</p>
+<ol>
+<li>流出：从指令头部取一个指令，如果操作要求的保留站有空闲，则送往相应的保留站。操作数就绪，送入，没就绪，送入保留站的编号，实际进行了换名。消除了WAR.完成了预约结果，提前完成写操作，消除WAW。</li>
+<li>执行 load和store指令需要两步</li>
+<li>写结果</li>
+</ol>
+<p>增加保留站，对于load和store指令，放到load和store保留站中，对于ALU指令，放到对应的保留站中，将要写入的内存换名，将要使用的内存写入保留站中，当计算出结果之后，再修改同名的部分。</p>
+</li>
+</ol>
+<h2 id="再定序缓冲ROB"><a href="#再定序缓冲ROB" class="headerlink" title="再定序缓冲ROB"></a>再定序缓冲ROB</h2><p>比Tomasulo算法多了一个ROB，当指令进入对应的保留站中时，还要进入ROB，只有一个ROB，需要确认。</p>
+<h2 id="第五章-存储系统"><a href="#第五章-存储系统" class="headerlink" title="第五章 存储系统"></a>第五章 存储系统</h2><h3 id="层次结构"><a href="#层次结构" class="headerlink" title="层次结构"></a>层次结构</h3><ul>
+<li>速度越大，每位价格越高</li>
+<li>容量越大，每位价格越低</li>
+<li>容量越大，速度越慢</li>
+</ul>
+<p>程序访问的局部性原理：时间局部性和空间局部性</p>
+<p>一般将存储系统设计为多级层次，越靠近CPU的访问频度越大，越贵，速度越快，容量越小。</p>
+<h3 id="性能参数"><a href="#性能参数" class="headerlink" title="性能参数"></a>性能参数</h3><ul>
+<li>存储容量S</li>
+<li>每位价格C</li>
+</ul>
+<p>计算公式：<br>$$\frac{C1S1+C2S2}{S1+S2}$$</p>
+<p>显然，当S1&lt;&lt;S2时，C≈C2</p>
+<ul>
+<li>命中率H</li>
+</ul>
+<p>定义：CPU访问该存储系统时，在M1中找到所需信息的概率，计算公式为：</p>
+<p>$$\frac{N1}{N1+N2}$$</p>
+<p>其中N1和N2分别表示访问M1和M2的次数。</p>
+<p>不命中率：F=1-H</p>
+<ul>
+<li>平均访存时间TA</li>
+</ul>
+<p>当命中时，访问时间为T1，称为命中时间<br>不命中时，需要将内容从M2调回到M1中，再去访问，则不命中的访问时间为：</p>
+<pre><code>                        T2+TB+T1=T1+TM
+</code></pre>
+<p>其中TM=T2+TB，称为不命中开销</p>
+<p>根据不命中率和命中率来推测，该系统的平均访存时间为</p>
+<pre><code>            TA=HT1+(1-H)(T1+TM)=T1+(1-H)TM
+</code></pre>
+<h3 id="三级存储结构"><a href="#三级存储结构" class="headerlink" title="三级存储结构"></a>三级存储结构</h3><ul>
+<li>“Cache-主存层次”</li>
+</ul>
+<p>主要是为了弥补主存速度的不足。</p>
+<ul>
+<li>“主存-辅存”层次</li>
+</ul>
+<p>是为了弥补主存容量的不足。</p>
+<h3 id="映像规则"><a href="#映像规则" class="headerlink" title="映像规则"></a>映像规则</h3><ol>
+<li>全相联映像</li>
+</ol>
+<p>可以存放在Cache中的每一块</p>
+<ol start="2">
+<li>直接映像</li>
+</ol>
+<p>只能存放在唯一的位置，循环分配。</p>
+<ol start="3">
+<li>组相联映像</li>
+</ol>
+<p>前两个的结合，循环分配到固定的组，在组内可以随意分配。</p>
+<p>全相联的不命中率最低，直接映像的不命中率最高</p>
+<h3 id="查找方法"><a href="#查找方法" class="headerlink" title="查找方法"></a>查找方法</h3><p>并行查找：一种用相联存储器，一种用单体多字的按地址访问的存储器和比较器来实现</p>
+<h3 id="替换算法"><a href="#替换算法" class="headerlink" title="替换算法"></a>替换算法</h3><ul>
+<li>随机法</li>
+<li>先进先出（FIFO）</li>
+<li>最近最少使用法（LRU）</li>
+</ul>
+<p>LRU的实现，堆栈法和比较对法</p>
+<h3 id="写策略"><a href="#写策略" class="headerlink" title="写策略"></a>写策略</h3><ul>
+<li><p>写直达法，指不仅写入相应的cache块，还写入下一级存储器</p>
+</li>
+<li><p>写回法，只写入cache中相应的快，只有块要被替换时，才被写回下一级存储器</p>
+</li>
+<li><p>按写分配法</p>
+</li>
+</ul>
+<p>一般对应写回法</p>
+<ul>
+<li>不按写分配法</li>
+</ul>
+<p>一般对应写直达法</p>
+<h3 id="Cache性能分析"><a href="#Cache性能分析" class="headerlink" title="Cache性能分析"></a>Cache性能分析</h3><p>平均访存时间=命中时间+不命中率*不命中开销</p>
+<p>CPU时间=IC(CPI+每条指令的平均访存次数<em>不命中率*不命中开销)*时钟周期时间<br>=(CPI</em>时钟周期时间+每条指令的平均访存次数*不命中率*不命中开销*时钟周期时间)</p>
+<p>其中，不命中开销*时钟周期时间往往给出，可以直接进行计算</p>
+<h3 id="改进Cache性能"><a href="#改进Cache性能" class="headerlink" title="改进Cache性能"></a>改进Cache性能</h3><p>总共有17种方法，其中8种用于减低不命中率，5种用于减少不命中开销，4种用于减少命中时间。</p>
+<h4 id="降低不命中率（8种）"><a href="#降低不命中率（8种）" class="headerlink" title="降低不命中率（8种）"></a>降低不命中率（8种）</h4><p>不命中分为三类：</p>
+<ol>
+<li>强制性不命中</li>
+</ol>
+<p>第一次访问时，该块不在Cache中，需要从下一级调入Cache中<br>2. 容量不命中</p>
+<p>程序执行所需的块不能全部调入Cache中，当某些块被替换之后， 若再次访问就会发生不命中<br>3. 冲突不命中</p>
+<p>在组相联或直接映像中，若太多的块映像到同一组中，则会出现该块的某些块被替换，然后又被访问的情况。</p>
+<ul>
+<li>相联度越高，冲突不命中率越少</li>
+<li>强制性不命中和容量不命中不受相联度影响</li>
+<li>强制性不命中不受Cache容量影响，但是容量不命中随容量的增加而减少。</li>
+</ul>
+<h5 id="1-增加块的大小"><a href="#1-增加块的大小" class="headerlink" title="1. 增加块的大小"></a>1. 增加块的大小</h5><p>不一定降低不命中率，原因是因为增大块大小会有双重效果</p>
+<ul>
+<li>增大了空间局部性，减少强制不命中率</li>
+<li>减少了Cache中块的数量，有可能冲突不命中增加</li>
+</ul>
+<h5 id="2-增加Cache的容量"><a href="#2-增加Cache的容量" class="headerlink" title="2. 增加Cache的容量"></a>2. 增加Cache的容量</h5><p>增加成本，增加命中时间</p>
+<h5 id="3-提高相联度"><a href="#3-提高相联度" class="headerlink" title="3. 提高相联度"></a>3. 提高相联度</h5><ul>
+<li>采用相联度超过8的方案的实际意义不大</li>
+<li>2：1Cache经验规则：容量为N的直接映像Cache的不命中率和容量为N/2的二路相联Cache的不命中率差不多相同</li>
+</ul>
+<h5 id="4-伪相联Cache"><a href="#4-伪相联Cache" class="headerlink" title="4. 伪相联Cache"></a>4. 伪相联Cache</h5><h5 id="5-硬件预取"><a href="#5-硬件预取" class="headerlink" title="5. 硬件预取"></a>5. 硬件预取</h5><h5 id="6-编译器控制的预取"><a href="#6-编译器控制的预取" class="headerlink" title="6. 编译器控制的预取"></a>6. 编译器控制的预取</h5><h5 id="7-编译优化"><a href="#7-编译优化" class="headerlink" title="7. 编译优化"></a>7. 编译优化</h5><ol>
+<li>程序代码和数据重组</li>
+<li>内外循环交换</li>
+<li>分块</li>
+</ol>
+<h5 id="8-“牺牲”Cache"><a href="#8-“牺牲”Cache" class="headerlink" title="8. “牺牲”Cache"></a>8. “牺牲”Cache</h5><h4 id="减少Cache不命中开销（5种）"><a href="#减少Cache不命中开销（5种）" class="headerlink" title="减少Cache不命中开销（5种）"></a>减少Cache不命中开销（5种）</h4><h5 id="采用两级Cache"><a href="#采用两级Cache" class="headerlink" title="采用两级Cache"></a>采用两级Cache</h5><h5 id="让读不命中优先于写"><a href="#让读不命中优先于写" class="headerlink" title="让读不命中优先于写"></a>让读不命中优先于写</h5><h5 id="写缓冲合并"><a href="#写缓冲合并" class="headerlink" title="写缓冲合并"></a>写缓冲合并</h5><h5 id="请求字处理技术"><a href="#请求字处理技术" class="headerlink" title="请求字处理技术"></a>请求字处理技术</h5><h5 id="非阻塞Cache技术"><a href="#非阻塞Cache技术" class="headerlink" title="非阻塞Cache技术"></a>非阻塞Cache技术</h5><h4 id="减少命中时间"><a href="#减少命中时间" class="headerlink" title="减少命中时间"></a>减少命中时间</h4><h5 id="容量小、结构简单的Cache"><a href="#容量小、结构简单的Cache" class="headerlink" title="容量小、结构简单的Cache"></a>容量小、结构简单的Cache</h5><h5 id="虚拟Cache"><a href="#虚拟Cache" class="headerlink" title="虚拟Cache"></a>虚拟Cache</h5><ol>
+<li>物理Cache</li>
+<li>虚拟Cache</li>
+<li>虚拟索引-物理标识方法</li>
+</ol>
+<h5 id="Cache访问流水化"><a href="#Cache访问流水化" class="headerlink" title="Cache访问流水化"></a>Cache访问流水化</h5><h5 id="踪迹Cache"><a href="#踪迹Cache" class="headerlink" title="踪迹Cache"></a>踪迹Cache</h5><h3 id="并行主存系统"><a href="#并行主存系统" class="headerlink" title="并行主存系统"></a>并行主存系统</h3><h4 id="单体多字存储器"><a href="#单体多字存储器" class="headerlink" title="单体多字存储器"></a>单体多字存储器</h4><ul>
+<li>一次性读取m个指令字</li>
+<li>读取的m个字不一定全部有效</li>
+<li>凑齐m个数才能一起写入存储器</li>
+<li>当要读的数据字和写的数据字在同一个长存储字中时，不能同时读写</li>
+</ul>
+<h4 id="多体交叉存储器"><a href="#多体交叉存储器" class="headerlink" title="多体交叉存储器"></a>多体交叉存储器</h4><ol>
+<li>高位交叉编址</li>
+</ol>
+<p>按列存储，高$log_2m$位都是相同的。称作体号</p>
+<p>考虑处于第i行第j列的单元，体号为j，体内地址为i,其线性地址为求法为：<br>$$A=j*n+i$$</p>
+<p>如果已经知道线性地址，也可以反求体号和体内地址<br>$$A=\lfloor \frac{A}{n} \rfloor$$</p>
+<p>$i=A  mod  n$</p>
+<p>简而言之，这种排列法是先把前一个存储体存满再存到下一个存储体中</p>
+<ol start="2">
+<li>低位交叉编址</li>
+</ol>
+<p>这种存法是先把每个存储体的第一行存满，再存第二行，具体算法不再赘述</p>
+<h4 id="避免存储体冲突"><a href="#避免存储体冲突" class="headerlink" title="避免存储体冲突"></a>避免存储体冲突</h4><p>所谓冲突，即两个访问请求要访问同一个存储体</p>
+<h2 id="第六章-输入输出系统"><a href="#第六章-输入输出系统" class="headerlink" title="第六章 输入输出系统"></a>第六章 输入输出系统</h2><h3 id="输入输出系统的参数"><a href="#输入输出系统的参数" class="headerlink" title="输入输出系统的参数"></a>输入输出系统的参数</h3><ul>
+<li>可用性</li>
+</ul>
+<p>系统正常工作的时间在两次正常服务间隔时间中所占的比率</p>
+<p>$$可用性=\frac{MTTF}{MTTF+MTTR}$$</p>
+<ul>
+<li>可靠性</li>
+</ul>
+<p>指系统从某个参考点开始一直连续的提供服务的能力，通常用平均失效前时间（MTTF）来衡量，其倒数为失效率</p>
+<ul>
+<li>可信性</li>
+</ul>
+<p>不可度量</p>
+<h3 id="RAID"><a href="#RAID" class="headerlink" title="RAID"></a>RAID</h3><p>书上表格总结到位</p>
+<h3 id="通道处理机"><a href="#通道处理机" class="headerlink" title="通道处理机"></a>通道处理机</h3><h4 id="I-O和Cache数据一致性"><a href="#I-O和Cache数据一致性" class="headerlink" title="I/O和Cache数据一致性"></a>I/O和Cache数据一致性</h4><p>数据不一致，体现在</p>
+<ul>
+<li><p>写回法时，Cache中是新值，而存储器中是旧值，若此时读取存储器中的值，则发生数据不一致</p>
+</li>
+<li><p>I/O系统进行输入操作后，存储器的内容发生了变化，但是CPU在Cache中看到的仍然是旧值</p>
+</li>
+</ul>
+<p>解决方法：</p>
+<ul>
+<li>软件的方法：设法保证I/O缓冲器中的所有各块都不在Cache中，</li>
+<li>硬件的方法，在进行输入操作时，检查相应的I/O地址是否在Cache中。</li>
+</ul>
+<h2 id="第八章-多处理机"><a href="#第八章-多处理机" class="headerlink" title="第八章 多处理机"></a>第八章 多处理机</h2><h3 id="对称式共享存储器结构"><a href="#对称式共享存储器结构" class="headerlink" title="对称式共享存储器结构"></a>对称式共享存储器结构</h3><p>指多个处理器-Cache模块共用一个物理存储器</p>
+<h3 id="监听协议的实现"><a href="#监听协议的实现" class="headerlink" title="监听协议的实现"></a>监听协议的实现</h3><p>实现监听协议的关键有以下3个方面：</p>
+
+    </div>
+
+    
+        <hr class="fhr">
+        <div id="vcomments"></div>
+    
+</div>
+    <div class="footer" id="footer">
+    <p><h4>Copyright © 2020 | Author: Lu Xinyuan | Theme By <a class="theme-author" target="_blank" rel="noopener" href="https://github.com/Xunzhuo/hexo-theme-coder" style="font-size:14px; color: #969696">Coder</a></h4>
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <span id="busuanzi_container_site_pv">Page Views: <span id="busuanzi_value_site_pv"></span></span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv">Unique Visitors: <span id="busuanzi_value_site_uv"></span></span>
+    
+    <label class="el-switch el-switch-blue el-switch-sm" style="vertical-align: sub;">
+        <input type="checkbox" name="switch" id="update_style">
+        <span class="el-switch-style"></span>
+    </label>
+
+    <!--         <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1278548644'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/stat.php%3Fid%3D1278548644%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script> -->
+</p>
+</div>
+
+<input type="hidden" id="web_style" value="black">
+<input type="hidden" id="valine_appid" value="NOsswOncKgc8HOxqo9oxIWlX-gzGzoHsz">
+<input type="hidden" id="valine_appKey" value="z1FihjWEbS8uIfUQdmCtK7zz">
+
+<script src="/libs/jquery.min.js"></script>
+
+
+<script src="/libs/highlight/highlight.pack.js"></script>
+
+<script src='//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+
+<script src="/js/js.js"></script>
+
+<style type="text/css">
+.v * {
+color: #698fca;
+}
+.v .vlist .vcard .vhead .vsys {
+color: #3a3e4a;
+}
+.v .vlist .vcard .vh .vmeta .vat {
+color: #638fd5;
+}
+.v .vlist .vcard .vhead .vnick {
+color: #6ba1ff;
+}
+.v a {
+color: #8696b1;
+}
+.v .vlist .vcard .vhead .vnick:hover {
+color: #669bfc;
+}
+</style>
+    <script type="text/javascript" color="173,174,173" opacity='1' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+</body>
+</html>
