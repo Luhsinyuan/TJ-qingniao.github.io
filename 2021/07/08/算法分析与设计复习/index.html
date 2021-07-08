@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="google-site-verification" content="TZE0rZyIqLl10trYu3BWBWa1Vmz6HFwhb2OcNEK4u-s" />
+     <link rel="shortcut icon" href= /img/favicon.ico >
+    <title>
+        Be Better
+    </title>
+    <meta name="description" content= My personal blog. >
+    <meta name="keywords" content= Blog,Hexo >
+    
+<link rel="stylesheet" href="/libs/highlight/styles/monokai-sublime.css">
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body id="bodyx">
+    <div class="hd posts">
+    <a href="/index.html"><i class="fa fa-home
+ replay-btn" aria-hidden="true"></i></a>
+    <div class="post-title">
+        <p>
+            算法分析与设计复习
+        </p>
+        <hr>
+    </div>
+    <div class="post-content">
+        <h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><h2 id="什么是算法"><a href="#什么是算法" class="headerlink" title="什么是算法"></a>什么是算法</h2><p>算法是一系列解决问题的明确指令，也就是说，对于符合一定规范的输入，能够在有限时间内获得要求的输出。</p>
+<ul>
+<li>算法的每一个步骤都必须没有歧义，不能有半点含糊</li>
+<li>必须认真确定算法所处理的输入的值域</li>
+<li>同一算法可以用几种不同的形式来描述</li>
+<li>同一问题，可能存在几种不同的算法</li>
+<li>针对同一问题的算法可能基于完全不同的解题思路，而且解题速度会有显著的不同</li>
+</ul>
+<h3 id="求最大公约数的算法"><a href="#求最大公约数的算法" class="headerlink" title="求最大公约数的算法"></a>求最大公约数的算法</h3><ul>
+<li>欧几里得算法</li>
+<li>连续整数检测法</li>
+<li>中学时学习的计算法</li>
+</ul>
+<h3 id="求不大于给定整数n的连续质数序列"><a href="#求不大于给定整数n的连续质数序列" class="headerlink" title="求不大于给定整数n的连续质数序列"></a>求不大于给定整数n的连续质数序列</h3><ul>
+<li>埃拉托色筛选法</li>
+</ul>
+<h2 id="重要的算法问题种类"><a href="#重要的算法问题种类" class="headerlink" title="重要的算法问题种类"></a>重要的算法问题种类</h2><ul>
+<li>排序问题</li>
+<li>查找问题</li>
+<li>字符串处理</li>
+<li>图问题</li>
+</ul>
+<p>包括图的遍历，最短路径算法，有向图的拓朴排序，TSP旅行商问题，图填色问题</p>
+<ul>
+<li>组合问题</li>
+<li>几何问题</li>
+</ul>
+<p>包括最近临近对问题和凸包问题</p>
+<ul>
+<li>数值问题</li>
+</ul>
+<p>包括解方程，定积分和评估函数等</p>
+<h2 id="重要的数据结构"><a href="#重要的数据结构" class="headerlink" title="重要的数据结构"></a>重要的数据结构</h2><h3 id="线性数据结构"><a href="#线性数据结构" class="headerlink" title="线性数据结构"></a>线性数据结构</h3><ul>
+<li>数组</li>
+<li>链表</li>
+</ul>
+<p>包括单链表，双链表，还有比较特殊的堆栈和队列</p>
+<h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><ul>
+<li>有向图</li>
+<li>无向图</li>
+</ul>
+<h4 id="表示算法"><a href="#表示算法" class="headerlink" title="表示算法"></a>表示算法</h4><ul>
+<li>邻接矩阵和邻接链表</li>
+</ul>
+<h4 id="加权图"><a href="#加权图" class="headerlink" title="加权图"></a>加权图</h4><ul>
+<li>指给边附了值的有向图，称为边的权重或成本</li>
+</ul>
+<h4 id="路径和环"><a href="#路径和环" class="headerlink" title="路径和环"></a>路径和环</h4><h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><h4 id="有根树"><a href="#有根树" class="headerlink" title="有根树"></a>有根树</h4><h4 id="有序树"><a href="#有序树" class="headerlink" title="有序树"></a>有序树</h4><h3 id="集合和字典"><a href="#集合和字典" class="headerlink" title="集合和字典"></a>集合和字典</h3><h4 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h4><p>指互不相同项的集合</p>
+<h4 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h4><h1 id="第二章-算法效率分析基础"><a href="#第二章-算法效率分析基础" class="headerlink" title="第二章 算法效率分析基础"></a>第二章 算法效率分析基础</h1><h2 id="分析框架"><a href="#分析框架" class="headerlink" title="分析框架"></a>分析框架</h2><h3 id="输入规模的度量"><a href="#输入规模的度量" class="headerlink" title="输入规模的度量"></a>输入规模的度量</h3><p>矩阵用阶数，数字的话是其二进制的位数</p>
+<h3 id="运行时间的度量单位"><a href="#运行时间的度量单位" class="headerlink" title="运行时间的度量单位"></a>运行时间的度量单位</h3><p>基本操作：通常是内层循环中最费时的操作。</p>
+<p>对于排序问题，一般是比较次数</p>
+<p>对于数学问题，最为耗时的操作为除法，其次是乘法，最后是加减法</p>
+<h3 id="增长次数"><a href="#增长次数" class="headerlink" title="增长次数"></a>增长次数</h3><p>一个需要指数级操作次数的算法只能用来解决规模非常小的问题</p>
+<h3 id="算法的最优，最差和平均效率"><a href="#算法的最优，最差和平均效率" class="headerlink" title="算法的最优，最差和平均效率"></a>算法的最优，最差和平均效率</h3><ul>
+<li>考虑顺序查找：</li>
+</ul>
+<p>在n个元素的列表中查找给定的值</p>
+<p>最差效率指的是输入规模为n时算法在最坏情况下的效率。在此示例中为n,即在最后一个都没找到。</p>
+<p>最优效率指的是输入规模为n时算法在最优情况下的效率。在此示例中为1，即在第一个元素就找到。</p>
+<p>平均效率：一般情况下算法的效率，不能通过最优和最坏求平均值来求得</p>
+<h3 id="分析框架概要"><a href="#分析框架概要" class="headerlink" title="分析框架概要"></a>分析框架概要</h3><ul>
+<li>算法的时间空间效率都用输入规模的函数进行度量</li>
+<li>用算法基本操作的执行次数来度量算法的时间效率；通过计算算法消耗的额外存储空间的数量来度量空间效率。</li>
+<li>在输入规模相同的情况下，有些算法的效率会有显著差异。对于这样的算法，我们区分最差效率，最优效率和平均效率</li>
+<li>主要关心一点：当算法的输入规模趋于无限大时，它的运行时间(消耗额外空间)函数的增长次数。</li>
+</ul>
+<h2 id="渐进符号和基本效率类型"><a href="#渐进符号和基本效率类型" class="headerlink" title="渐进符号和基本效率类型"></a>渐进符号和基本效率类型</h2><h3 id="非正式介绍"><a href="#非正式介绍" class="headerlink" title="非正式介绍"></a>非正式介绍</h3><p>三种符号：<br>$O(g(n))$:增长次数小于g(n)（及其常数倍,n趋于无限大）的函数集合<br>$\Omega(g(n))$:增长次数大于等于g(n)（及其常数倍，n趋向无穷大）的函数集合<br>$\Theta(g(n))$:增长次数等于g(n)（及其常数倍，n趋向于无穷大）的函数集合</p>
+<h3 id="符号-O"><a href="#符号-O" class="headerlink" title="符号$O$"></a>符号$O$</h3><ul>
+<li>定义：如果函数t(n)包含在$O(g(n))$中，记作$t(n)\in O(g(n))$，它的成立条件是：对于所有足够大的n，t(n)的下界由g(n)的常数倍决定，也就是说，存在大于0的常数c和非负的整数n0，使得对于所有的$n&gt;=n0$而言，$t(n)&lt;=cg(n)$.</li>
+</ul>
+<p>简而言之，t(n)增长速度比g(n)低。</p>
+<h3 id="符号-Omega"><a href="#符号-Omega" class="headerlink" title="符号$\Omega$"></a>符号$\Omega$</h3><ul>
+<li>定义：如果函数t(n)包含在$\Omega(g(n))$中，记作$t(n)\in \Omega(g(n))$，它的成立条件是：对于所有足够大的n，t(n)的上界由g(n)的常数倍决定，也就是说，存在大于0的常数c和非负的整数n0，使得对于所有的$n&gt;=n0$而言，$t(n)&gt;=cg(n)$.</li>
+</ul>
+<p>简而言之，t(n)增长速度比g(n)高。</p>
+<h3 id="符号-Theta"><a href="#符号-Theta" class="headerlink" title="符号$\Theta$"></a>符号$\Theta$</h3><ul>
+<li>定义：如果函数t(n)包含在$\Theta(g(n))$中，记作$t(n)\in \Theta(g(n))$，它的成立条件是：对于所有足够大的n，t(n)的上界和下届都由g(n)的常数倍决定，也就是说，存在大于0的常数c1，c2和非负的整数n0，使得对于所有的$n&gt;=n0$而言，$c_2g(n)&lt;=t(n)&lt;=c_1g(n)$.</li>
+</ul>
+<p>简而言之，t(n)的增长速度和g(n)一样。</p>
+<h3 id="渐进符号的有用特性"><a href="#渐进符号的有用特性" class="headerlink" title="渐进符号的有用特性"></a>渐进符号的有用特性</h3><ul>
+<li>算法的总体效率是由较大增长次数的部分所决定的，即$t_1(n)+t_2(n)$$\in$$\Omega$$(max{g_1(n),g_2(n)})$</li>
+</ul>
+<h3 id="利用极限比较增长次数"><a href="#利用极限比较增长次数" class="headerlink" title="利用极限比较增长次数"></a>利用极限比较增长次数</h3><p>$$e=\lim_{n\rightarrow\infty}\frac{t(n)}{g(n)}$$</p>
+<p>=0,表明t(n)的增长次数比g(n)要小</p>
+<p>=c&gt;0,表明t(n)的增长次数和g(n)相同</p>
+<p>=$\infty$,表明t(n)的增长次数比g(n)大</p>
+<p>其中，前两种情况意味着t(n)$t(n)\in O(g(n))$</p>
+<p>后两种情况意味着$t(n)\in \Omega(g(n))$</p>
+<p>第二种情况意味着$t(n)\in \Theta(g(n))$</p>
+<h2 id="非递归算法的分析"><a href="#非递归算法的分析" class="headerlink" title="非递归算法的分析"></a>非递归算法的分析</h2><ul>
+<li>决定用哪个参数作为输入规模</li>
+<li>找出算法的基本操作（总是位于算法的最内层循环中）</li>
+<li>检查基本操作的执行次数是否只依赖于输入规模，如果也他还依赖一些其他的特性，则最差效率，最优效率以及平均效率需要分别研究</li>
+<li>建立一个算法基本操作执行次数的求和表达式</li>
+<li>利用求和运算的标准公式和法则建立一个操作次数的闭合公式，或者至少确定它的增长次数</li>
+</ul>
+<p>常用的两个基本法则：<br>$\sum_{i=l}^{u}ca_i=c\sum_{i=l}^{n}a_i$</p>
+<p>$\sum_{i=l}^{u}(a_i+b_i)=\sum_{i=l}^{u}(a_i)\pm\sum_{i=l}^{u}(b_i)$</p>
+<p>以及两个求和公式：</p>
+<p>$\sum_{i=l}^{u}(1)=u-l+1$</p>
+<p>$\sum_{i=0}^{u}(i)=\sum_{i=1}^{u}(i)=1+2+3+…+n=\frac{n(n+1)}{2}\approx\frac{1}{2}n^2\in\Theta(n^2)$</p>
+<h2 id="递归算法的数学分析"><a href="#递归算法的数学分析" class="headerlink" title="递归算法的数学分析"></a>递归算法的数学分析</h2><ul>
+<li>决定用哪个参数作为输入规模的度量标准</li>
+<li>找出算法的基本操作</li>
+<li>检查一下，对于相同规模的不同输入，基本操作的执行次数是否可能不同</li>
+<li>对于算法基本操作的执行次数，建立一个递推关系以及相应的初始条件</li>
+<li>解这个递推式，或者至少确定它的解的增长次数</li>
+</ul>
+<p>注意：如果递推关系之间是加减关系，如：$M(n)=M(n-1)+1$这种公式，就可以直接递推，但是如果递推关系之间是倍数关系，比如：$M(n)=M(\frac{n}{2})+1$这种关系式，将$n$用$2^k$代替，得到$M(2^k)=M(2^{k-1})+1$这样的公式，递推得到最终结果后，再把$k=log_2n$代入即可</p>
+<h2 id="计算第n个斐波那契数"><a href="#计算第n个斐波那契数" class="headerlink" title="计算第n个斐波那契数"></a>计算第n个斐波那契数</h2><p>对于斐波那契数列的递推公式$F(n)=F(n-1)+F(n-2)$,根据附录的解法有可得通项公式为$F(n)=\frac{1}{\sqrt{5}}(\phi^n-\phi (jian)^n)$</p>
+<p>那么对于斐波那契数列的计算次数递推公式$M(n)=M(n-1)+M(n-2)+1$,</p>
+<p>可以得到$M(n)-M(n-1)-M(n-2)=1$，</p>
+<p>再换算可得：$(M(n)+1)-(M(n-1)+1)-(M(n)+1)=0$，</p>
+<p>用$B(n)=M(n)+1$替换可得：</p>
+<p>$B(n)-B(n-1)-B(n-2)=0$，可以发现和斐波那契数列的递推公式一样，无非是起始数不同，从而可得斐波那契数列的操作次数的公式</p>
+<h1 id="第三章-蛮力法"><a href="#第三章-蛮力法" class="headerlink" title="第三章 蛮力法"></a>第三章 蛮力法</h1><p>蛮力法是一种简单直接地解决问题地方法，常常基于问题地描述和所涉及地概念定义</p>
+<h2 id="选择排序和冒泡排序"><a href="#选择排序和冒泡排序" class="headerlink" title="选择排序和冒泡排序"></a>选择排序和冒泡排序</h2><h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p>对于每一位，将其定从这一位之后所有数据中最小的，然后扫描其后的数据，找到最小的，与其交换；接着判断下一位。</p>
+<p>时间复杂度：$\Theta(n^2)$</p>
+<p>交换次数：$\Theta(n)$</p>
+<p>其中算法的第一层循环可以理解为分别对前$n-1$位进行操作，内层循环是扫描后$n-j$个数据，找到最小值</p>
+<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>比较表的相邻元素，如果是逆序，那么就交换他们的顺序，重复多次，最大（小）的元素就会沉到最后一个，第二遍将第二大（小）沉下去，直到所有数排列完毕</p>
+<p>其中算法的第一层循环可以理解为需要沉底$n-1$次，内层循环是每次沉底只需要在前$n-j$个数据中比较，因为后$j$位已经排好序了</p>
+<p>时间复杂度：$\Theta(n^2)$</p>
+<p>最坏情况下的交换次数是$\Theta(n^2)$</p>
+<h2 id="顺序查找和蛮力字符串匹配"><a href="#顺序查找和蛮力字符串匹配" class="headerlink" title="顺序查找和蛮力字符串匹配"></a>顺序查找和蛮力字符串匹配</h2><h3 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h3><p>挨个比较数据是不是与需要找的数据相等，相等即找到。</p>
+<p>线性时间复杂度</p>
+<h3 id="蛮力字符串匹配"><a href="#蛮力字符串匹配" class="headerlink" title="蛮力字符串匹配"></a>蛮力字符串匹配</h3><p>将模式对准文本的前m个字符，挨个检查是否匹配，如果全部不匹配则向右横移一位，直到全部匹配</p>
+<p>算法中，第一层循环可以理解为对于文本的前$n-m$个数据挨个检验，内层循环可以理解为从该位开始，挨个检查文本的后边每一位是不是与模式相匹配。其中j是模式内的下标，指代模式内的第几个数</p>
+<p>最坏情况的时间复杂度为$O(nm)$，其中n为文本的数据量，m为模式的数据量</p>
+<p>平均情况下好很多</p>
+<h2 id="穷举查找"><a href="#穷举查找" class="headerlink" title="穷举查找"></a>穷举查找</h2><h3 id="旅行商问题"><a href="#旅行商问题" class="headerlink" title="旅行商问题"></a>旅行商问题</h3><p>简单来说，求一个图的最短哈密顿回路</p>
+<p>穷举出所有可能的路径，找到其中最小的路径。</p>
+<p>排列的数量有$(n-1)!$个</p>
+<h3 id="背包问题"><a href="#背包问题" class="headerlink" title="背包问题"></a>背包问题</h3><p>将一个具有不同价值的货物装进一个背包里，使得背包中货物的价值最高</p>
+<p>穷举法，找出所有能装入背包的商品的集合，其最大价值即为结果</p>
+<p>对于一个n个物品的集合，其子集数量为$2^n$个</p>
+<h3 id="分配问题"><a href="#分配问题" class="headerlink" title="分配问题"></a>分配问题</h3><p>n个任务分配个n个人执行，其中每一个人执行不同的任务都会有不同的成本，找寻成本最小的任务序列</p>
+<p>用矩阵代表成本，用一个n维元组代表分配方案，其中第i个数$n_i$代表将第$n_i$个任务分配给第i个人</p>
+<p>穷举法找出所有的分配方式，其最小成本即为结果</p>
+<p>排列个数有$N!$个</p>
+<h2 id="递归法"><a href="#递归法" class="headerlink" title="递归法"></a>递归法</h2><p>递归的含义是，一个函数调用其本身</p>
+<h3 id="递归的应用"><a href="#递归的应用" class="headerlink" title="递归的应用"></a>递归的应用</h3><ul>
+<li>计算$n!$</li>
+<li>计算斐波那契数列</li>
+<li>Ackerman函数</li>
+<li>汉诺塔</li>
+<li>排列问题</li>
+</ul>
+<h1 id="第四章-减治算法"><a href="#第四章-减治算法" class="headerlink" title="第四章 减治算法"></a>第四章 减治算法</h1><p>减治法有三种主要的变化形式：</p>
+<ul>
+<li>减去一个常量</li>
+</ul>
+<p>每次算法迭代总是从实例中减去一个相同的常量，一般来说，这个常量等于1，但是也有其他的情况出现</p>
+<ul>
+<li>减去一个常量因子</li>
+</ul>
+<p>在算法的每次迭代中，总是从实例的规模中减去一个相同的常数因子，一般等于2。</p>
+<ul>
+<li>减去的规模是可变的</li>
+</ul>
+<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><p>假设$A[0…n-2]$排序的问题已经解决，考虑第$n-1$个数据，需要做的是在$A[0…n-2]$中找到一个合适的位置，将其插入。</p>
+<p>在算法中，第一层循环是对从第二个数据到最后一个数据进行插入操作，首先取到这个数字，然后向前搜索，依此将大于该数据的数向后移一个位置，直到停止，然后将该数据插入。</p>
+<p>最坏情况下的基本操作次数是$\frac{n(n-1)}{2}\in \Theta(n^2)$</p>
+<p>这种情况下是纯逆序的原始数据，每次都要插入到最前端</p>
+<p>最优情况下的基本操作次数是$n-1\in \Theta(n)$</p>
+<p>这种情况下是纯正序的原始数据，每次只需要插入到最后端</p>
+<p>平均的操作次数是$\frac{n^2}{4}\in \Theta(n^2)$</p>
+<h2 id="拓朴排序"><a href="#拓朴排序" class="headerlink" title="拓朴排序"></a>拓朴排序</h2><ul>
+<li>DFS算法</li>
+</ul>
+<p>按照深度优先算法，并记住顶点变成死端（即退出遍历栈）的顺序。将此顺序反过来便是拓扑排序的一个解。</p>
+<p>复杂度与DFS一致，即$O(E+V)$</p>
+<p>首先要保证图是有向无环图</p>
+<ul>
+<li>基于减治法的思想</li>
+</ul>
+<p>即不断地在余下的图中求出一个源（没有输入边），然后将与其有关的边全部删除。</p>
+<p>复杂度为$O(E+V)$</p>
+<h2 id="减常因子算法"><a href="#减常因子算法" class="headerlink" title="减常因子算法"></a>减常因子算法</h2><h3 id="折半查找"><a href="#折半查找" class="headerlink" title="折半查找"></a>折半查找</h3><p>首先将给定的数据与数列的中值作比较，倘若相等则直接返回下标，倘若小于中值，则到原数列的左侧寻找，倘若大于中值，则到原数列的右侧寻找。</p>
+<p>最坏情况下的基本操作次数的递推公式为$C_{worst}(n)=C_{worst}(\frac{n}{2})+1$，其中$C_{worst}(1)=1$</p>
+<p>可以将$n=2^k$带入，得到$C_{worst}(2^k)=k+1=\log_{2}n+1$</p>
+<p>其平均情况下$C_{avg}(n)=\log_2n$</p>
+<h3 id="假币问题"><a href="#假币问题" class="headerlink" title="假币问题"></a>假币问题</h3><p>假设假币更轻</p>
+<ul>
+<li>分为两堆的情况</li>
+</ul>
+<p>复杂度为$O(\log_2n)$</p>
+<p>与对半查找几乎相同</p>
+<ul>
+<li>分为三堆的情况</li>
+</ul>
+<p>复杂度为$O(\log_3n)$</p>
+<h3 id="俄式乘法"><a href="#俄式乘法" class="headerlink" title="俄式乘法"></a>俄式乘法</h3><h1 id="第五章-分治法"><a href="#第五章-分治法" class="headerlink" title="第五章 分治法"></a>第五章 分治法</h1><ul>
+<li>将一个问题划分为同一类型的若干子问题</li>
+<li>对这些子问题求解（一般使用递归方法，但在问题规模比较小时，也会采用别的方法）</li>
+<li>有必要的话，合并这些子问题的解，以得到原始问题的答案</li>
+</ul>
+<p>通用分治递推式：$T(n)=aT(\frac{n}{b})+f(n)$</p>
+<p>主定理：如果在递推式中$f(n)\in\Theta(n^d)$,那么：</p>
+<p>$T(N)=\left{\begin{matrix}\Theta(n^d),当a&lt;b^d时\\Theta(n^dlobn),当a=b^d时\\Theta(n^{log_ba}),当a&gt;b^d时 \end{matrix}\right.$</p>
+<h2 id="合并排序"><a href="#合并排序" class="headerlink" title="合并排序"></a>合并排序</h2><p>对于一个数组，将其一分为二，对每个子数组递归排序，然后合并为一个有序数组</p>
+<p>有递推公式：$C_{worst}(n)=2C_{worst}(\frac{n}{2})+n-1$，其中$C_{worst}(1)=0$</p>
+<p>可得$C_{worst}(n)\in \Theta(nlogn)$</p>
+<p>如果$n=2^k$</p>
+<p>$C_{worst}(n)=nlog_2n-n+1$</p>
+<h2 id="大整数乘法"><a href="#大整数乘法" class="headerlink" title="大整数乘法"></a>大整数乘法</h2><p>将两个相乘的n位大整数拆分为前$\frac{n}{2}$位和后$\frac{n}{2}$位，分别叫做$A，B，C，D$，通过一种巧妙的方法将四次乘法化简为三次乘法，从而使得原本为$O(n^2)$的复杂度降低为$O(n^{1.585})$</p>
+<h2 id="Strassen矩阵乘法"><a href="#Strassen矩阵乘法" class="headerlink" title="Strassen矩阵乘法"></a>Strassen矩阵乘法</h2><p>初始矩阵乘法需要的时间复杂度为$O(n^3)$</p>
+<p>通过Strassen算法，有递归式：$M(n)=7M(\frac{n}{2})$,其中$M(1)=1$</p>
+<p>按照前边的做法，将$n=2^k$带入，</p>
+<p>可以解得$M(2^k)=7^k$,</p>
+<p>再将$k=log_2n$带入回式子，</p>
+<p>可得$M(n)=7^{log_2n}=n^{log_27}\approx n^{2.807}$</p>
+<p>比$O(n^3)$快了一些</p>
+<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p>找出一个元素$A[s]$,对整个数列进行划分，其中比$A[s]$小的元素全部在其左边，比$A[s]$大的元素都在其右边，此时$A[s]$已经在其应该在的位置，只要对左侧和右侧的数据再次进行排序即可。</p>
+<p>其划分算法有两种：</p>
+<ul>
+<li><p>Lomuto算法</p>
+</li>
+<li><p>霍尔提出的算法</p>
+</li>
+</ul>
+<p>从数组的两侧开始扫描，对于左侧的指针，忽略小于中轴的数值，碰到大于等于中轴的数值停止；对于右侧的指针，忽略大于中轴的数值，碰到小于等于中轴的数值停止。此时会有三种情况：</p>
+<ol>
+<li>i&lt;j</li>
+</ol>
+<p>简单交换$A[i]$和$A[j]$,再对i和j分别+1，继续判断</p>
+<ol start="2">
+<li>i&gt;j</li>
+</ol>
+<p>将中轴和$A[j]$交换之后，就得到了一个划分</p>
+<ol start="3">
+<li>i=j</li>
+</ol>
+<p>此时$A[i]=A[j]=中枢$，因此将中枢和$A[j]$交换即可</p>
+<p>综合起来，当i&gt;=j时，交换中枢和$A[j]$即可得到一个划分</p>
+<p>最优情况下时间复杂度为$\Theta(nlog_2n)$</p>
+<p>最差情况下时间复杂度为$\frac{(n+1)(n+2)}{2}\in\Theta(n^2)$</p>
+<p>平均情况下时间复杂度为$C_{avg}(n)\approx2nlnn\approx1.39log_2n$</p>
+<p>对于中枢值的选择，可以随机选择一个数值，这样可以保证划分的基准时随机的，从而期望划分是较为对称的。</p>
+<h2 id="棋盘覆盖问题"><a href="#棋盘覆盖问题" class="headerlink" title="棋盘覆盖问题"></a>棋盘覆盖问题</h2><p>在棋盘中有一个特殊块，使用提供的四种块将整个棋盘填满。</p>
+<p>解决方法：</p>
+<p>将整个棋盘四等分，将一个特殊图形放在没有三个没有特殊块的交界处，然后再次划分，用同样的做法，直到棋盘被划分为1*1的小棋盘。</p>
+<h1 id="第六章-变治法"><a href="#第六章-变治法" class="headerlink" title="第六章 变治法"></a>第六章 变治法</h1><ul>
+<li>变换为同样问题的一个更简单或者更方便的实例，称之为实例化简</li>
+<li>变换为同样问题的不同表现，称之为改变表现</li>
+<li>变换为另一个问题的实例，这种问题的算法是已知的，称之为问题化简</li>
+</ul>
+<h2 id="预排序"><a href="#预排序" class="headerlink" title="预排序"></a>预排序</h2><ul>
+<li>检测数组中元素的唯一性</li>
+</ul>
+<p>预排序之后，只需要判断相邻的数据是否相同</p>
+<ul>
+<li>模式计算</li>
+</ul>
+<p>预排序之后，相同的值会邻接在一起，计算出邻接次数最多的数据，就是数列的模式</p>
+<ul>
+<li>查找问题</li>
+</ul>
+<p>倘若用最好的排序算法，时间复杂度为$O(nlogn)$，查找算法的时间复杂度为$O(n)$，加起来还是$O(nlogn)$，因此预排序反而较慢</p>
+<h2 id="高斯消去法"><a href="#高斯消去法" class="headerlink" title="高斯消去法"></a>高斯消去法</h2><p>将线性方程组的系数写在矩阵中，通过矩阵初等变换，将其转换为上三角矩阵，其最后一个方程可以直接算出$X_n$的值，然后带入到倒数第二个方程中，可以得到$X_{n-1}$的值，再将这两个值代入到倒数第三个方程中，可以得到$X_{n-2}$的值…就这样一直代入，最后就可以得到所有的值。</p>
+<p>用途：</p>
+<ul>
+<li>LU分解</li>
+<li>计算矩阵的逆</li>
+<li>计算矩阵的行列式</li>
+</ul>
+<h2 id="堆和堆排序"><a href="#堆和堆排序" class="headerlink" title="堆和堆排序"></a>堆和堆排序</h2><h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><ul>
+<li><p>堆可以定义为一个二叉树，并未这颗二叉树是基本完备的，这意味着这个二叉树，每一层都是满的，除了最后一层最右边的元素可能缺位</p>
+</li>
+<li><p>父母优势，又被称为堆特性，每一个节点的键值都要大于或等于子女的键值。</p>
+</li>
+</ul>
+<p>堆的特性：</p>
+<ul>
+<li>只存在一颗n个节点的完全二叉树，它的高度等于$log_2n$</li>
+<li>堆的根总是包含了堆的最大元素</li>
+<li>堆的一个节点以及该节点的子孙也是一个堆</li>
+<li>可以用数组实现堆，方法是从上到下，从左到右来记录堆的元素，为了方便起见，在数组上从1到n记录数据，而第零个数据空着或者放置限位器，在这种表示法中：  <ol>
+<li>父母的键值将会在数组的前$\frac{n}{2}$个位置中，而叶子节点地键将会占据后$\frac{n}{2}$个位置</li>
+<li>对于一个处于父母位置i的键来说，它的子女将会在2i和2i+1的位置，相应的，对于一个位于i的键来说，它的父母将会位于$\frac{n}{2}$的位置</li>
+</ol>
+</li>
+</ul>
+<p>构造堆的方法：</p>
+<ul>
+<li>自底向上堆构造</li>
+</ul>
+<p>简单来说，就是先按照给定的顺序构造一棵树，然后从最后一个父母节点开始，到根为止，检测它是否满足堆的要求，如果不满足，将该节点的K值与它子女中的最大值互换，然后检查新位置上K是否满足要求，这个过程持续到K满足父母优势为止。</p>
+<p>最坏情况下的键值比较次数为$2(n-log_2(n+1))$,小于$2n$，即属于$O(n)$</p>
+<ul>
+<li>自顶向下构造</li>
+</ul>
+<p>简单来说，就是插入法，即插入前的堆已经满足要求，将键值为K的节点插入到最后一位，然后检测最后一位的键值和其父母的键值，倘若父母键值更大，则不做任何操作，此时已经满足堆的要求，否则将父母与K交换，再将K与其新父母作比较，直到K不大于它的最后一个父母，或者K到达顶点。</p>
+<p>由于包含n个节点的堆高度约为$log_2n$,因此该算法的时间复杂度属于$O(log n)$</p>
+<p>从堆中删除最大的键：</p>
+<ul>
+<li>将堆的最后一个键和第一个键互换</li>
+<li>将堆的规模减一</li>
+<li>严格按照自底向上堆构造算法的做法，进行堆化。</li>
+</ul>
+<h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><ul>
+<li>构造堆</li>
+<li>删除最大键</li>
+</ul>
+<p>时间复杂度为$O（nlogn）$，与合并排序一致</p>
+<h2 id="霍纳法则"><a href="#霍纳法则" class="headerlink" title="霍纳法则"></a>霍纳法则</h2><p>简单来说，通过对多项式中x的提取，使得多项式表现为x嵌套的形式，从而能够一层一层，简单地计算出结果，其伪代码也较为简单</p>
+<h2 id="问题化简"><a href="#问题化简" class="headerlink" title="问题化简"></a>问题化简</h2><h3 id="线性规划"><a href="#线性规划" class="headerlink" title="线性规划"></a>线性规划</h3><p>跟高中的线性规划很像，就是给定已知条件，然后求一个极值</p>
+<h3 id="化简为图"><a href="#化简为图" class="headerlink" title="化简为图"></a>化简为图</h3><h1 id="回溯法和分支限界法"><a href="#回溯法和分支限界法" class="headerlink" title="回溯法和分支限界法"></a>回溯法和分支限界法</h1><h2 id="搜索算法："><a href="#搜索算法：" class="headerlink" title="搜索算法："></a>搜索算法：</h2><h3 id="穷举搜索"><a href="#穷举搜索" class="headerlink" title="穷举搜索"></a>穷举搜索</h3><h3 id="盲目搜索"><a href="#盲目搜索" class="headerlink" title="盲目搜索"></a>盲目搜索</h3><pre><code>1. 深度优先搜索
+</code></pre>
+<p>中心思想：在可以往深处搜索的时候往深处搜索</p>
+<p>用栈这个数据结构</p>
+<p>用处：</p>
+<ul>
+<li>检测图的连通性</li>
+<li>检测图的无环性</li>
+<li><ol start="2">
+<li>广度优先搜索</li>
+</ol>
+</li>
+</ul>
+<p>中心思想：在可以往广度搜索的时候更宽广的搜索</p>
+<p>用队列这个数据结构</p>
+<p>用处：</p>
+<ul>
+<li>检测图的连通性</li>
+<li>检测图的无环性</li>
+</ul>
+<ol start="3">
+<li>回溯法</li>
+</ol>
+<ul>
+<li>回溯法是一个既带有系统性又带有跳跃性的搜索算法</li>
+<li>它在包含问题的解空间树中，按照深度优先搜索的策略，从根节点出发搜索解空间树——系统性</li>
+<li>算法搜索至解空间树的任一节点时，判断该节点为根的子树是否包含问题的解，如果肯定不包含，则跳过以该节点为根的子树的搜索，逐层向其祖先节点回溯。否则进入该子树，继续深度优先的策略进行搜索。——跳跃性</li>
+</ul>
+<p>解空间树有三种节点：</p>
+<ul>
+<li>根节点，搜索的起点</li>
+<li>中间节点，非终端节点</li>
+<li>叶节点，终端节点</li>
+</ul>
+<p>搜索过程就是找一个或者一些特殊的叶节点</p>
+<p>基本思想：</p>
+<ul>
+<li>搜索从开始节点（根节点）出发，以深度优先搜索整个解空间</li>
+<li>这个开始节点为活结点，同时也成为当前的扩展结点，在当前的扩展结点处，搜索向纵深方向移至一个新节点，这个新节点就成为新的活结点，并成为当前扩展结点</li>
+<li>如果在当前的扩展结点处不能再向纵深方向扩展，则当前扩展结点成为死结点</li>
+<li>此时，应当回溯到最近的一个活结点处，并使这个活结点成为当前的扩展结点</li>
+</ul>
+<p>基本步骤：</p>
+<ul>
+<li>针对所给的问题，定义问题的解空间</li>
+<li>确定易于搜索的解空间结构</li>
+<li>以深度优先方式搜索解空间，并在搜索过程中用剪枝函数避免无效搜索</li>
+</ul>
+<p>常用剪枝函数：</p>
+<ul>
+<li>用约束函数在扩展结点处剪去不满足约束的子树</li>
+<li>用限界函数剪去得不到最优解的子树</li>
+</ul>
+<p>常见的解空间树有：</p>
+<ul>
+<li>子集树</li>
+<li>排列树</li>
+</ul>
+<ol start="4">
+<li>分支限界法</li>
+</ol>
+<p>常以广度优先或以最小耗度（最大效益）优先的方式搜索问题的解空间树，裁剪那些不能得到最优解的子树以提高搜索效率</p>
+<ul>
+<li>队列式（FIFO）分支限界法</li>
+</ul>
+<p>从活结点表取出节点的顺序与加入节点的顺序相同，因此活结点表的性质与队列相同。</p>
+<ul>
+<li>优先队列（代价最小或效益最大）分支限界法，每个节点都有一个对应的耗费或收益，以此决定节点的优先级</li>
+</ul>
+<ol>
+<li>博弈树搜索</li>
+</ol>
+<h3 id="启发式搜索"><a href="#启发式搜索" class="headerlink" title="启发式搜索"></a>启发式搜索</h3><h1 id="第八章-动态规划"><a href="#第八章-动态规划" class="headerlink" title="第八章 动态规划"></a>第八章 动态规划</h1><p>最优化法则：</p>
+<p>最优化问题任一实例的最优解都是由其子实例的最优解构成的。</p>
+<p>动态规划的有效性依赖于问题本身具有两个重要的适用性质：</p>
+<ul>
+<li>最优子结构</li>
+</ul>
+<p>如果问题的最优解是由其子问题的最优解来构造，则称该问题具有最优子结构</p>
+<ul>
+<li>重叠子问题</li>
+</ul>
+<p>如果递归算法反复求解相同的子问题，则称为具有重叠子问题</p>
+<h2 id="计算二项式系数"><a href="#计算二项式系数" class="headerlink" title="计算二项式系数"></a>计算二项式系数</h2><p>$C_{n}^{k}=C_{n-1}^{k}+C_{n-1}^{k-1}$</p>
+<p>即，从n个数里取出k个数的取法数是不取最后一个，即从前n-1个数里取k个的取法数加上取最后一个，即从前n-1个数里取k-1个的取法数</p>
+<p>计算$C_{n}^{k}$就可以用动态规划的方式，自底向上填表得出结果。</p>
+<p>时间复杂度为$\Theta(nk)$</p>
+<h2 id="最长公共子序列"><a href="#最长公共子序列" class="headerlink" title="最长公共子序列"></a>最长公共子序列</h2><p>两个字符串的最长公共子序列的长度有递推公式：</p>
+<p>$C[i,j]=\left{\begin{matrix}0,i=0或j=0\C[i-1,j-1]+1,若i,j&gt;0,x_i=y_j\max{C[i,j-1],C[i-1,j]} ，若i,j&gt;0,x_i!=y_j \end{matrix}\right.$</p>
+<p>则可以通过该递推公式填表，求出最长子序列的长度，随后倒推出最长公共子序列。</p>
+<p>倒推时，要注意在两个值不相等且其上下都为相等值时的方向，要始终为一个方向。</p>
+<h2 id="动态矩阵乘法"><a href="#动态矩阵乘法" class="headerlink" title="动态矩阵乘法"></a>动态矩阵乘法</h2><p>对于多个矩阵相乘的情况，不同的计算顺序会有不同的乘法次数，因此要确定一个多矩阵相乘的最小乘法次数是，考虑使用动态规划的解决方法。</p>
+<p>设$m[i,j]$为从第$i$个矩阵到第$j$个矩阵相乘的最小乘法次数。有如下递推公式：</p>
+<p>$m[i,j]=\left{\begin{matrix}0,i=j\min_{i&lt;=k&lt;j}{m[i,k]+m[k+1,j]+p_{i-1}p_kp_{j}},i&lt;j\end{matrix}\right.$</p>
+<p>在填表时，要注意只填一个上三角矩阵，并且按照从左上到右下，从下往上填表，其中$S[i,j]$中填的是计算从第i个矩阵乘到第j个矩阵时，最少乘法次数的分界点</p>
+<h2 id="0-1背包问题、"><a href="#0-1背包问题、" class="headerlink" title="0-1背包问题、"></a>0-1背包问题、</h2><p>一个容量为C的背包，装尽可能价值高的商品</p>
+<p>设$V[i,j]$为面对第$i$件物品，容量还剩$j$时所能获得的最大价值。</p>
+<p>有如下递推公式：</p>
+<p>$V[i,j]=\left{\begin{matrix}max{V[i-1,j],V[i-1,j-w_i]+v_i},j&gt;w_i\V[i-1,j],0&lt;=j&lt;w_i\end{matrix}\right.$</p>
+<p>从上往下，从左向右填表</p>
+<p>此时只能找到最高价值，但是不知道放入的物品是什么，此时与最长子序列相同，仍需要回溯，从最后一个数据开始，如果$V[i,j]=V[i-1,j]$，证明其没有放入第i个商品，回到$V[i-1,j]$;如果$V[i,j]=V[i-1,j-w_i]+v_i$时，说明装了这个商品，随后我们回到装该商品之前，一直遍历到i=0。</p>
+<p>使用记忆功能方法，自顶向下，即使用递归的方法。</p>
+<h2 id="warshall算法求传递闭包"><a href="#warshall算法求传递闭包" class="headerlink" title="warshall算法求传递闭包"></a>warshall算法求传递闭包</h2><p>对于第k列，如果有为值为1的行，将该行与第k行逻辑加，然后k++，直到检测完所有的列</p>
+<h2 id="Floyd算法"><a href="#Floyd算法" class="headerlink" title="Floyd算法"></a>Floyd算法</h2><p>首先构造一个矩阵$P$，其中彼此之间能够直接到达的节点,数值为$P[i，j]$，表示从$i$到$j$的距离为$P[i，j]$，不能直接到达的值为正无穷。然后对于每一个节点$k$，将其作为中间节点,倘若$P[i,k]+P[k,j]$小于$P[i,j]$,那么就修改$P[i，j]$的值，使其为较小的值，就这样遍历整个图，最终得到的结果就是每个点到其他点的最短距离。</p>
+<h1 id="第九章-贪婪算法"><a href="#第九章-贪婪算法" class="headerlink" title="第九章 贪婪算法"></a>第九章 贪婪算法</h1><p>核心是，每一步做出的选择都满足以下的条件：</p>
+<ul>
+<li>可行的</li>
+<li>局部最优的</li>
+<li>不可取消的</li>
+</ul>
+<h2 id="背包问题-1"><a href="#背包问题-1" class="headerlink" title="背包问题"></a>背包问题</h2><p>在之前用动态规划和回溯法解决背包问题时，题目要求的是0-1背包问题，此时不要求离散型，而是要求线性，即可只取物品的一部分。此时将每个物品的单位价值标注出来，然后按照单位价值从高到低拿取即可。</p>
+<h2 id="最小生成树问题"><a href="#最小生成树问题" class="headerlink" title="最小生成树问题"></a>最小生成树问题</h2><h3 id="Prim算法"><a href="#Prim算法" class="headerlink" title="Prim算法"></a>Prim算法</h3><p>有两个集合，一个是树中节点集合$V$,一个是未被选取的节点集合$P$,首先随意选取一个顶点加入到集合$V中$，然后计算其他顶点与该集合中顶点的最短距离，然后选取其中最短的那一个顶点，将其加入到集合$V$中，直到所有的顶点都被加入到集合$V$中。</p>
+<h3 id="Kruskal算法"><a href="#Kruskal算法" class="headerlink" title="Kruskal算法"></a>Kruskal算法</h3><p>将所有的边按照从小到大的顺序排列，选取最短的那条边，倘若已经被选取得边没有构成环，则证明选取成功，接着选取下一条边；若被选取的边之间构成环，则放弃这条边，选择下一条边进行判断。</p>
+<h3 id="Dijkstra算法"><a href="#Dijkstra算法" class="headerlink" title="Dijkstra算法"></a>Dijkstra算法</h3><p>与Prim算法很像，但是不同，同样是有两个集合，一个是已经确定最短路径的顶点集合，一个是没有确定最短路径的顶点集合。对于每个顶点记录到起始点的最短距离，选取其中数值最小的那个，将其加入到第一个集合中，然后对剩下的所有顶点判断，能否通过该顶点使得到达起始顶点的距离变小，如果可以修改最短距离的值；依此将所有定点加入到第一个集合中。</p>
+
+    </div>
+
+    
+        <hr class="fhr">
+        <div id="vcomments"></div>
+    
+</div>
+    <div class="footer" id="footer">
+    <p><h4>Copyright © 2020 | Author: Lu Xinyuan | Theme By <a class="theme-author" target="_blank" rel="noopener" href="https://github.com/Xunzhuo/hexo-theme-coder" style="font-size:14px; color: #969696">Coder</a></h4>
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <span id="busuanzi_container_site_pv">Page Views: <span id="busuanzi_value_site_pv"></span></span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv">Unique Visitors: <span id="busuanzi_value_site_uv"></span></span>
+    
+    <label class="el-switch el-switch-blue el-switch-sm" style="vertical-align: sub;">
+        <input type="checkbox" name="switch" id="update_style">
+        <span class="el-switch-style"></span>
+    </label>
+
+    <!--         <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1278548644'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/stat.php%3Fid%3D1278548644%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script> -->
+</p>
+</div>
+
+<input type="hidden" id="web_style" value="black">
+<input type="hidden" id="valine_appid" value="NOsswOncKgc8HOxqo9oxIWlX-gzGzoHsz">
+<input type="hidden" id="valine_appKey" value="z1FihjWEbS8uIfUQdmCtK7zz">
+
+<script src="/libs/jquery.min.js"></script>
+
+
+<script src="/libs/highlight/highlight.pack.js"></script>
+
+<script src='//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+
+<script src="/js/js.js"></script>
+
+<style type="text/css">
+.v * {
+color: #698fca;
+}
+.v .vlist .vcard .vhead .vsys {
+color: #3a3e4a;
+}
+.v .vlist .vcard .vh .vmeta .vat {
+color: #638fd5;
+}
+.v .vlist .vcard .vhead .vnick {
+color: #6ba1ff;
+}
+.v a {
+color: #8696b1;
+}
+.v .vlist .vcard .vhead .vnick:hover {
+color: #669bfc;
+}
+</style>
+    <script type="text/javascript" color="173,174,173" opacity='1' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+</body>
+</html>
